@@ -21,6 +21,7 @@ from json import dumps as json_dumps
 from typing import Any
 
 import aiohttp
+from aiohttp_retry import ListRetry, RetryClient
 from hydroqc.error import HydroQcError, HydroQcHTTPError
 from hydroqc.hydro_api.cache import CCached
 from hydroqc.hydro_api.consts import (
@@ -84,7 +85,7 @@ class HydroClient:
         password: str,
         timeout: int = REQUESTS_TIMEOUT,
         verify_ssl: bool = True,
-        session: aiohttp.ClientSession | None = None,
+        session: RetryClient | aiohttp.ClientSession | None = None,
         log_level: str | None = "INFO",
         diag_folder: str | None = None,
     ):
@@ -92,7 +93,7 @@ class HydroClient:
         self.username: str = username
         self.password: str = password
         self._timeout: int = timeout
-        self._session: aiohttp.ClientSession | None = session
+        self._session: RetryClient | aiohttp.ClientSession | None = session
         self._verify_ssl: bool = verify_ssl
         self._diag_folder: str | None = diag_folder
         self._diag_id: int = 0
@@ -179,17 +180,31 @@ class HydroClient:
                     fhj,
                     indent=2,
                 )
-
+        # Retry Options
         self._logger.debug("HTTP query %s to %s", url, method)
-        raw_res: aiohttp.ClientResponse = await getattr(self._session, method)(
-            url,
-            params=params,
-            data=data,
-            allow_redirects=False,
-            ssl=ssl_context,
-            cookies=cookies,
-            headers=headers,
-        )
+        raw_res: aiohttp.ClientResponse
+        if isinstance(self._session, RetryClient):
+            retry_options = ListRetry(timeouts=[1, 2, 3])
+            raw_res = await getattr(self._session, method)(
+                url,
+                params=params,
+                data=data,
+                allow_redirects=False,
+                ssl=ssl_context,
+                cookies=cookies,
+                headers=headers,
+                retry_options=retry_options,
+            )
+        else:
+            raw_res = await getattr(self._session, method)(
+                url,
+                params=params,
+                data=data,
+                allow_redirects=False,
+                ssl=ssl_context,
+                cookies=cookies,
+                headers=headers,
+            )
         # Result Diagnostic
         if self._diag_folder is not None:
             cleaned_url = url.replace("/", "_").replace(":", "").split("#", 1)[0]
@@ -253,9 +268,10 @@ class HydroClient:
     def _get_httpsession(self) -> None:
         """Set http session."""
         if self._session is None:
-            self._session = aiohttp.ClientSession(
+            client_session = aiohttp.ClientSession(
                 requote_redirect_url=False,
             )
+            self._session = RetryClient(client_session=client_session)
 
     def _get_customer_http_headers(
         self, applicant_id: str, customer_id: str
