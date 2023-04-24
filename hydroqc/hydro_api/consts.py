@@ -11,7 +11,7 @@ REQUESTS_TTL = 1
 HOST_LOGIN = "https://connexion.hydroquebec.com"
 HOST_SESSION = "https://session.hydroquebec.com"
 HOST_SERVICES = "https://cl-services.idp.hydroquebec.com"
-HOST_SPRING = "https://cl-ec-spring.hydroquebec.com"
+HOST_SPRING = "https://cl-ec-lsw.solutions.hydroquebec.com"
 HOST_RB_SOL = "https://rb.solutions.hydroquebec.com"
 HOST_OUTAGES = "https://infopannes-services.solutions.hydroquebec.com"
 
@@ -30,15 +30,12 @@ CHECK_SESSION_URL = f"{HOST_LOGIN}/hqam/oauth2/connect/checkSession"
 # Initialization uri
 RELATION_URL = f"{HOST_SERVICES}/cl/prive/api/v1_0/relations"
 
-FLEXD_DATA_URL = (
-    f"{HOST_SPRING}/portail/fr/group/clientele/portrait-de-consommation/"
-    "resourceObtenirDonneesMoisHiverFlex"
-)
+# TODO avoid all the /portail/ URLs
+PORTRAIT_URL = f"{HOST_SPRING}/portail/fr/group/clientele/portrait-de-consommation"
+
+FLEXD_DATA_URL = f"{PORTRAIT_URL}/" "resourceObtenirDonneesMoisHiverFlex"
 FLEXD_PEAK_URL = f"{HOST_RB_SOL}/portraitweb/api/v3_0/conso"
-CONSO_CSV_URL = (
-    f"{HOST_SPRING}/portail/fr/group/clientele/portrait-de-consommation/"
-    "resourceTelechargerDonneesConsommation"
-)
+CONSO_CSV_URL = f"{PORTRAIT_URL}/" "resourceTelechargerDonneesConsommation"
 CONSO_OVERVIEW_CSV_URL = (
     f"{HOST_SPRING}/portail/en/group/clientele/portrait-de-consommation/"
     "resourceTelechargerPeriodesFacturation"
@@ -61,41 +58,25 @@ CONTRACT_LIST_URL = f"{HOST_SERVICES}/cl/prive/api/v3_0/partenaires/contrats"
 CUSTOMER_INFO_URL = f"{HOST_SERVICES}/cl/prive/api/v3_0/partenaires/infoCompte"
 
 # TODO avoid all the /portail/ URLs
-PORTRAIT_URL = f"{HOST_SPRING}/portail/fr/group/clientele/portrait-de-consommation"
-# TODO avoid all the /portail/ URLs
-PERIOD_DATA_URL = (
-    f"{HOST_SPRING}/portail/fr/group/clientele/portrait-de-consommation/"
-    "resourceObtenirDonneesPeriodesConsommation"
-)
+PERIOD_DATA_URL = f"{PORTRAIT_URL}/" "resourceObtenirDonneesPeriodesConsommation"
 
 # TODO avoid all the /portail/ URLs
-ANNUAL_DATA_URL = (
-    f"{HOST_SPRING}/portail/fr/group/clientele/portrait-de-consommation/"
-    "resourceObtenirDonneesConsommationAnnuelles"
-)
+ANNUAL_DATA_URL = f"{PORTRAIT_URL}/" "resourceObtenirDonneesConsommationAnnuelles"
 
 # TODO avoid all the /portail/ URLs
-MONTHLY_DATA_URL = (
-    f"{HOST_SPRING}/portail/fr/group/clientele/portrait-de-consommation/"
-    "resourceObtenirDonneesConsommationMensuelles"
-)
+MONTHLY_DATA_URL = f"{PORTRAIT_URL}/" "resourceObtenirDonneesConsommationMensuelles"
 
 # TODO avoid all the /portail/ URLs
 DAILY_CONSUMPTION_API_URL = (
-    f"{HOST_SPRING}/portail/fr/group/clientele/portrait-de-consommation/"
-    "resourceObtenirDonneesQuotidiennesConsommation"
+    f"{PORTRAIT_URL}/" "resourceObtenirDonneesQuotidiennesConsommation"
 )
 
 # TODO avoid all the /portail/ URLs
 HOURLY_CONSUMPTION_API_URL = (
-    f"{HOST_SPRING}/portail/fr/group/clientele/portrait-de-consommation/"
-    "resourceObtenirDonneesConsommationHoraires"
+    f"{PORTRAIT_URL}/" "resourceObtenirDonneesConsommationHoraires"
 )
 # TODO avoid all the /portail/ URLs
-HOURLY_DATA_URL_2 = (
-    f"{HOST_SPRING}/portail/fr/group/clientele/portrait-de-consommation/"
-    "resourceObtenirDonneesMeteoHoraires"  # not used
-)
+HOURLY_DATA_URL_2 = f"{PORTRAIT_URL}/" "resourceObtenirDonneesMeteoHoraires"  # not used
 
 # CPC
 GET_CPC_API_URL = (
