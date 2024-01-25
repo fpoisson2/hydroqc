@@ -14,10 +14,10 @@ from importlib.metadata import PackageNotFoundError, version
 from io import StringIO
 from json import dumps as json_dumps
 from typing import Any
-from pkce import generate_pkce_pair
 
 import aiohttp
 import yarl
+from pkce import generate_pkce_pair
 
 from hydroqc.error import HydroQcError, HydroQcHTTPError
 from hydroqc.hydro_api.cache import CCached
@@ -323,7 +323,6 @@ class HydroClient:
         html_data = await res.text()
 
         # Extract the CSRF token
-
         if csrf_match := re.search(r'csrf":"(.+?)"', html_data):
             csrf_token = csrf_match.group(1)
         else:
@@ -387,6 +386,7 @@ class HydroClient:
         # auth/?state=%257B%2522redirectUrl%2522%3a%2522CONSO%2522%257D&code=(code value)
 
         # Set the HTTP request parameters
+
         url = (
             "https://connexion.solutions.hydroquebec.com/32bf9b91-0a36-4385-b231-d9a8fa3b05ab"
             + "/B2C_1A_PRD_signup_signin/api/CombinedSigninAndSignup/"

@@ -97,6 +97,7 @@ class SubTestContractDCPC:
                 )
             else:
                 assert peak_handler.current_peak is None
+            assert contract.raw_data.get("cpc_data")
         assert peak_handler.current_peak_is_critical in {None, True, False}
         assert peak_handler.current_state in {
             "critical_anchor",

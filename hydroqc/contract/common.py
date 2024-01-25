@@ -16,6 +16,8 @@ from hydroqc.types import (
     ConsumpHourlyTyping,
     ConsumpMonthlyTyping,
     ContractTyping,
+    CPCDataTyping,
+    DPCDataTyping,
     OutageListTyping,
     PeriodDataTyping,
 )
@@ -353,6 +355,24 @@ class Contract(ABC):
             raw_output,
         )
         return data_csv
+
+    @property
+    def raw_data(
+        self,
+    ) -> dict[
+        str,
+        ContractTyping
+        | ConsumpAnnualTyping
+        | OutageListTyping
+        | CPCDataTyping
+        | DPCDataTyping,
+    ]:
+        """Get a bunch of un processed data."""
+        return {
+            "base_info": self._raw_info_data,
+            "annual_info": self._annual_info_data,
+            "outages": self._outages_data,
+        }
 
     # Current period attributes
     # CP == Current period

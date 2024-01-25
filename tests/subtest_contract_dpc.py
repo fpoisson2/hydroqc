@@ -51,6 +51,8 @@ class SubTestContractDPC:  # pylint: disable=too-many-statements
 
         await contract.get_dpc_data()
 
+        assert contract.raw_data.get("dpc_data")
+
         contract.set_preheat_duration(10)
         assert isinstance(contract.peak_handler.winter_start_date, datetime.datetime)
 

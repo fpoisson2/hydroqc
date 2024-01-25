@@ -6,7 +6,13 @@ from hydroqc.contract.common import check_period_data_present
 from hydroqc.contract.contract_residential import ContractResidential
 from hydroqc.hydro_api.client import HydroClient
 from hydroqc.peak.dpc.handler import DPCPeakHandler
-from hydroqc.types import DPCDataTyping
+from hydroqc.types import (
+    ConsumpAnnualTyping,
+    ContractTyping,
+    CPCDataTyping,
+    DPCDataTyping,
+    OutageListTyping,
+)
 
 
 def check_dpc_data_present(
@@ -150,3 +156,20 @@ class ContractDPC(ContractResidential):
         ?: ???????
         """
         return self._dpc_data["results"][0]["etatHiver"]
+
+    @property
+    def raw_data(
+        self,
+    ) -> dict[
+        str,
+        ContractTyping
+        | ConsumpAnnualTyping
+        | OutageListTyping
+        | CPCDataTyping
+        | DPCDataTyping,
+    ]:
+        """Get a bunch of un processed data."""
+        raw_data = super().raw_data
+        if hasattr(self, "_dpc_data"):
+            raw_data["dpc_data"] = self._dpc_data
+        return raw_data

@@ -471,3 +471,10 @@ class SubTestCommon:
 
         assert isinstance(contract.outages, list)
         assert contract.next_outage in [None] + contract.outages
+
+    @pytest.mark.asyncio
+    async def test_raw_data(self, contract: Contract) -> None:
+        """Test raw_data."""
+        assert contract.raw_data.get("base_info")
+        assert contract.raw_data.get("annual_info")
+        assert contract.raw_data.get("outages")

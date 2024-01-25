@@ -2,6 +2,13 @@
 from hydroqc.contract.contract_d import ContractD
 from hydroqc.hydro_api.client import HydroClient
 from hydroqc.peak.cpc.handler import CPCPeakHandler
+from hydroqc.types import (
+    ConsumpAnnualTyping,
+    ContractTyping,
+    CPCDataTyping,
+    DPCDataTyping,
+    OutageListTyping,
+)
 
 
 class ContractDCPC(ContractD):
@@ -48,3 +55,19 @@ class ContractDCPC(ContractD):
     def set_preheat_duration(self, duration: int) -> None:
         """Set preheat duration in minutes."""
         self._wch.set_preheat_duration(duration)
+
+    @property
+    def raw_data(
+        self,
+    ) -> dict[
+        str,
+        ContractTyping
+        | ConsumpAnnualTyping
+        | OutageListTyping
+        | CPCDataTyping
+        | DPCDataTyping,
+    ]:
+        """Get a bunch of un processed data."""
+        raw_data = super().raw_data
+        raw_data["cpc_data"] = self._wch.raw_data
+        return raw_data
