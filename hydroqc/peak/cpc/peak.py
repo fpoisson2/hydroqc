@@ -52,11 +52,6 @@ class Peak(BasePeak):
         preheat_duration: int = DEFAULT_PRE_HEAT_DURATION,
     ):
         """Period constructor."""
-        # if morning_evening not in MORNING_EVENING:
-        #    msg = f"Peak type {morning_evening} needs be one of {MORNING_EVENING}"
-        #    raise HydroQcCPCPeakError(msg)
-        # self._start_date: datetime.datetime = start_date.astimezone(EST_TIMEZONE)
-        # self._end_date: datetime.datetime = end_date.astimezone(EST_TIMEZONE)
         self._preheat_duration: int = preheat_duration
         super().__init__(start_date, end_date)
         self._raw_stats: CriticalPeakDataTyping = {}

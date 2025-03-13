@@ -19,7 +19,7 @@ from hydroqc.types import CPCDataTyping, CriticalPeakDataTyping, OpenDataPeakEve
 from hydroqc.utils import EST_TIMEZONE
 
 
-def get_peak_date(
+def _get_peak_date(
     peak_date: datetime.datetime, start_end: str, morning_evening: str
 ) -> datetime.datetime:
     """Get the start date of the peak."""
@@ -43,7 +43,9 @@ def get_peak_date(
         hour=default_dates[morning_evening][start_end].hour,
         minute=default_dates[morning_evening][start_end].minute,
         second=default_dates[morning_evening][start_end].second,
-    ).astimezone(EST_TIMEZONE)
+    )
+    if not event_date.tzinfo:
+        event_date = event_date.astimezone(EST_TIMEZONE)
     return event_date
 
 
@@ -200,16 +202,16 @@ class CPCPeakHandler(BasePeakHandler[Peak]):
         while current_date.date() <= self.winter_end_date.date():
             # Morning
             peak = Peak(
-                start_date=get_peak_date(current_date, "start", "morning"),
-                end_date=get_peak_date(current_date, "end", "morning"),
+                start_date=_get_peak_date(current_date, "start", "morning"),
+                end_date=_get_peak_date(current_date, "end", "morning"),
                 preheat_duration=self._preheat_duration,
             )
             self._set_peak_critical(peak)
             peak_list.append(peak)
             # Evening
             peak = Peak(
-                start_date=get_peak_date(current_date, "start", "evening"),
-                end_date=get_peak_date(current_date, "end", "evening"),
+                start_date=_get_peak_date(current_date, "start", "evening"),
+                end_date=_get_peak_date(current_date, "end", "evening"),
                 preheat_duration=self._preheat_duration,
             )
             self._set_peak_critical(peak)
