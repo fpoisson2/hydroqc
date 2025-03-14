@@ -303,7 +303,7 @@ package:
   script:
     # Build a package with a version based on the commmit short sha
     - pip install --upgrade pip
-    - pip install --upgrade build setuptools wheel twine setuptools_scm
+    - pip install -r test_requirements.txt
     - python3 -m build -o dist
     - python3 -m twine check --strict dist/*
     - TWINE_PASSWORD=${CI_JOB_TOKEN} TWINE_USERNAME=gitlab-ci-token python3 -m twine upload --verbose --repository-url ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi dist/*
