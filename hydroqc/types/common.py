@@ -36,17 +36,17 @@ class IDTokenTyping(TypedDict, total=True):
 class Rates(Enum):
     """Contract Rates."""
 
-    D: str = "D"
-    DT: str = "DT"
-    DPC: str = "DPC"
-    M: str = "M"
+    D = "D"
+    DT = "DT"
+    DPC = "DPC"
+    M = "M"
 
 
 class RateOptions(Enum):
     """Contract Rate Options."""
 
-    CPC: str = "CPC"
-    GDP: str = "GDP"
+    CPC = "CPC"
+    GDP = "GDP"
 
 
 OpenDataPeakEventOffer = Literal[

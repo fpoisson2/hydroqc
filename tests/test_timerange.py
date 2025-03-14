@@ -5,7 +5,7 @@ import datetime
 import pytest
 
 from hydroqc.error import HydroQcCPCPeakError
-from hydroqc.peak.cpc.handler import get_peak_date
+from hydroqc.peak.cpc.handler import _get_peak_date
 from hydroqc.peak.cpc.peak import Anchor
 from hydroqc.peak.cpc.peak import Peak as DCPCPeak
 from hydroqc.peak.cpc.peak import PreHeat
@@ -64,10 +64,10 @@ def test_peak() -> None:
     tmp_date = datetime.datetime.now().astimezone(EST_TIMEZONE)
     peak_date = tmp_date - datetime.timedelta(days=7)
     with pytest.raises(HydroQcCPCPeakError):
-        get_peak_date(peak_date, "start", "bad_value")
+        _get_peak_date(peak_date, "start", "bad_value")
 
-    start_date = get_peak_date(peak_date, "start", "evening")
-    end_date = get_peak_date(peak_date, "end", "evening")
+    start_date = _get_peak_date(peak_date, "start", "evening")
+    end_date = _get_peak_date(peak_date, "end", "evening")
 
     evening_peak = DCPCPeak(start_date, end_date)
     stats: CriticalPeakDataTyping = {
@@ -95,8 +95,8 @@ def test_peak() -> None:
     assert evening_peak.consumption_code == stats["codeConso"]
     assert evening_peak.is_billed == stats["indFacture"]
 
-    start_date = get_peak_date(peak_date, "start", "morning")
-    end_date = get_peak_date(peak_date, "end", "morning")
+    start_date = _get_peak_date(peak_date, "start", "morning")
+    end_date = _get_peak_date(peak_date, "end", "morning")
     morning_peak = DCPCPeak(start_date, end_date)
     assert morning_peak.start_date.date() == start_date.date()
     assert morning_peak.end_date.date() == start_date.date()
