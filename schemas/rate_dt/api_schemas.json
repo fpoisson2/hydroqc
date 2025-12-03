@@ -1,0 +1,4904 @@
+{
+  "generated_at": "2025-11-29T20:37:28.453374",
+  "metadata": {
+    "rate": "DT",
+    "rate_option": "NONE",
+    "customer_id": "1111111111",
+    "account_id": "111111111111",
+    "contract_id": "1111111111"
+  },
+  "schemas": {
+    "user_info": {
+      "type": "array",
+      "path": "$",
+      "length": 1,
+      "items": {
+        "type": "object",
+        "path": "$[0]",
+        "properties": {
+          "noPartenaireDemandeur": {
+            "type": "string",
+            "path": "$[0].noPartenaireDemandeur",
+            "format": "numeric-id"
+          },
+          "nom1Demandeur": {
+            "type": "string",
+            "path": "$[0].nom1Demandeur"
+          },
+          "nom2Demandeur": {
+            "type": "string",
+            "path": "$[0].nom2Demandeur"
+          },
+          "noPartenaireTitulaire": {
+            "type": "string",
+            "path": "$[0].noPartenaireTitulaire",
+            "format": "numeric-id"
+          },
+          "nom1Titulaire": {
+            "type": "string",
+            "path": "$[0].nom1Titulaire"
+          },
+          "nom2Titulaire": {
+            "type": "string",
+            "path": "$[0].nom2Titulaire"
+          },
+          "typeRelation": {
+            "type": "string",
+            "path": "$[0].typeRelation"
+          },
+          "indEcActif": {
+            "type": "boolean",
+            "path": "$[0].indEcActif"
+          },
+          "indFavori": {
+            "type": "boolean",
+            "path": "$[0].indFavori"
+          },
+          "nickname": {
+            "type": "string",
+            "path": "$[0].nickname"
+          }
+        },
+        "required": [
+          "noPartenaireDemandeur",
+          "nom1Demandeur",
+          "nom2Demandeur",
+          "noPartenaireTitulaire",
+          "nom1Titulaire",
+          "nom2Titulaire",
+          "typeRelation",
+          "indEcActif",
+          "indFavori",
+          "nickname"
+        ]
+      }
+    },
+    "customer_info": {
+      "type": "object",
+      "path": "$",
+      "properties": {
+        "indEligibilite": {
+          "type": "boolean",
+          "path": "$.indEligibilite"
+        },
+        "codeRaisonIneligibilite": {
+          "type": "string",
+          "path": "$.codeRaisonIneligibilite"
+        },
+        "infoCockpitPourPartenaireModel": {
+          "type": "object",
+          "path": "$.infoCockpitPourPartenaireModel",
+          "properties": {
+            "noPartenaire": {
+              "type": "string",
+              "path": "$.infoCockpitPourPartenaireModel.noPartenaire"
+            },
+            "nom": {
+              "type": "string",
+              "path": "$.infoCockpitPourPartenaireModel.nom"
+            },
+            "idTechnique": {
+              "type": "string",
+              "path": "$.infoCockpitPourPartenaireModel.idTechnique"
+            },
+            "prenom": {
+              "type": "string",
+              "path": "$.infoCockpitPourPartenaireModel.prenom"
+            },
+            "courriel": {
+              "type": "string",
+              "path": "$.infoCockpitPourPartenaireModel.courriel",
+              "format": "email"
+            },
+            "segmentation": {
+              "type": "string",
+              "path": "$.infoCockpitPourPartenaireModel.segmentation"
+            },
+            "categorie": {
+              "type": "string",
+              "path": "$.infoCockpitPourPartenaireModel.categorie"
+            },
+            "raisonSociale1": {
+              "type": "string",
+              "path": "$.infoCockpitPourPartenaireModel.raisonSociale1"
+            },
+            "raisonSociale2": {
+              "type": "string",
+              "path": "$.infoCockpitPourPartenaireModel.raisonSociale2"
+            },
+            "langueCorrespondance": {
+              "type": "string",
+              "path": "$.infoCockpitPourPartenaireModel.langueCorrespondance"
+            },
+            "indPagePersonnelleActive": {
+              "type": "boolean",
+              "path": "$.infoCockpitPourPartenaireModel.indPagePersonnelleActive"
+            },
+            "indFactureInternet": {
+              "type": "boolean",
+              "path": "$.infoCockpitPourPartenaireModel.indFactureInternet"
+            },
+            "indPaiementInternet": {
+              "type": "boolean",
+              "path": "$.infoCockpitPourPartenaireModel.indPaiementInternet"
+            },
+            "indAucunCompteContrat": {
+              "type": "boolean",
+              "path": "$.infoCockpitPourPartenaireModel.indAucunCompteContrat"
+            },
+            "indDonneesConsommation": {
+              "type": "boolean",
+              "path": "$.infoCockpitPourPartenaireModel.indDonneesConsommation"
+            },
+            "dateDerniereVisite": {
+              "type": "string",
+              "path": "$.infoCockpitPourPartenaireModel.dateDerniereVisite",
+              "format": "date"
+            },
+            "etatFacturePapier": {
+              "type": "string",
+              "path": "$.infoCockpitPourPartenaireModel.etatFacturePapier"
+            },
+            "listeComptesContrats": {
+              "type": "array",
+              "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats",
+              "length": 1,
+              "items": {
+                "type": "object",
+                "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0]",
+                "properties": {
+                  "titulaire": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].titulaire",
+                    "format": "numeric-id"
+                  },
+                  "nomTitulaire": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].nomTitulaire"
+                  },
+                  "prenomTitulaire": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].prenomTitulaire"
+                  },
+                  "raisonSocialeTitulaire1": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].raisonSocialeTitulaire1"
+                  },
+                  "raisonSocialeTitulaire2": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].raisonSocialeTitulaire2"
+                  },
+                  "nomGroupeTitulaire1": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].nomGroupeTitulaire1"
+                  },
+                  "nomGroupeTitulaire2": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].nomGroupeTitulaire2"
+                  },
+                  "categorieTitulaire": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].categorieTitulaire"
+                  },
+                  "adresse": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].adresse"
+                  },
+                  "modeEncaissement": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].modeEncaissement"
+                  },
+                  "payeurDivergent": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].payeurDivergent"
+                  },
+                  "dateEmission": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].dateEmission",
+                    "format": "date"
+                  },
+                  "montantEchu": {
+                    "type": "number",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].montantEchu"
+                  },
+                  "typeMVE": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].typeMVE"
+                  },
+                  "indContrats": {
+                    "type": "boolean",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].indContrats"
+                  },
+                  "indFinEventuelleCC": {
+                    "type": "boolean",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].indFinEventuelleCC"
+                  },
+                  "typeRelation": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].typeRelation"
+                  },
+                  "indDonneesErreur": {
+                    "type": "boolean",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].indDonneesErreur"
+                  },
+                  "factureIXOSID": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].factureIXOSID",
+                    "format": "numeric-id"
+                  },
+                  "documentArchivelinkID": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].documentArchivelinkID"
+                  },
+                  "dateFin": {
+                    "type": "null",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].dateFin"
+                  },
+                  "dateDebut": {
+                    "type": "null",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].dateDebut"
+                  },
+                  "indicateurPA": {
+                    "type": "boolean",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].indicateurPA"
+                  },
+                  "compteBancaire": {
+                    "type": "null",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].compteBancaire"
+                  },
+                  "adresseFacturation": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].adresseFacturation"
+                  },
+                  "regroupement": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].regroupement"
+                  },
+                  "listePaiements": {
+                    "type": "array",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].listePaiements",
+                    "length": 0,
+                    "items": {}
+                  },
+                  "noCompteContrat": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].noCompteContrat",
+                    "format": "numeric-id"
+                  },
+                  "dateEcheance": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].dateEcheance",
+                    "format": "date"
+                  },
+                  "montant": {
+                    "type": "number",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].montant"
+                  },
+                  "solde": {
+                    "type": "number",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].solde"
+                  },
+                  "soldeEnSouffrance": {
+                    "type": "number",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].soldeEnSouffrance"
+                  },
+                  "dernierMontantPaye": {
+                    "type": "number",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].dernierMontantPaye"
+                  },
+                  "contientPaiementsPostDates": {
+                    "type": "boolean",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].contientPaiementsPostDates"
+                  },
+                  "coche": {
+                    "type": "boolean",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].coche"
+                  },
+                  "listeNoContrat": {
+                    "type": "array",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].listeNoContrat",
+                    "length": 1,
+                    "items": {
+                      "type": "string",
+                      "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].listeNoContrat[0]",
+                      "format": "numeric-id"
+                    }
+                  },
+                  "dateProchaineFacture": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].dateProchaineFacture",
+                    "format": "date"
+                  },
+                  "typeDateProchaineFacture": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].typeDateProchaineFacture"
+                  },
+                  "segmentation": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].segmentation"
+                  },
+                  "sousConsommationMVE": {
+                    "type": "boolean",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].sousConsommationMVE"
+                  },
+                  "surConsommationMVE": {
+                    "type": "boolean",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].surConsommationMVE"
+                  },
+                  "revisionAnnuelleMVE": {
+                    "type": "boolean",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].revisionAnnuelleMVE"
+                  },
+                  "infoEligibiliteConfirmationPaiement": {
+                    "type": "null",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].infoEligibiliteConfirmationPaiement"
+                  },
+                  "noPartenaireMandataire": {
+                    "type": "null",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].noPartenaireMandataire"
+                  },
+                  "infoEligibiliteEntentePaiement": {
+                    "type": "null",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].infoEligibiliteEntentePaiement"
+                  },
+                  "infoEligibiliteConfirmPaiementOuEntente": {
+                    "type": "null",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].infoEligibiliteConfirmPaiementOuEntente"
+                  },
+                  "indProjection": {
+                    "type": "boolean",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].indProjection"
+                  },
+                  "typeEntenteSansProjection": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].typeEntenteSansProjection"
+                  },
+                  "gereDansEspaceClient": {
+                    "type": "boolean",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].gereDansEspaceClient"
+                  },
+                  "idBanque": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].idBanque"
+                  },
+                  "institution": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].institution"
+                  },
+                  "succursale": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].succursale"
+                  },
+                  "folio": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].folio"
+                  },
+                  "libelle": {
+                    "type": "string",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].libelle"
+                  },
+                  "indBloquerPI": {
+                    "type": "boolean",
+                    "path": "$.infoCockpitPourPartenaireModel.listeComptesContrats[0].indBloquerPI"
+                  }
+                },
+                "required": [
+                  "titulaire",
+                  "nomTitulaire",
+                  "prenomTitulaire",
+                  "raisonSocialeTitulaire1",
+                  "raisonSocialeTitulaire2",
+                  "nomGroupeTitulaire1",
+                  "nomGroupeTitulaire2",
+                  "categorieTitulaire",
+                  "adresse",
+                  "modeEncaissement",
+                  "payeurDivergent",
+                  "dateEmission",
+                  "montantEchu",
+                  "typeMVE",
+                  "indContrats",
+                  "indFinEventuelleCC",
+                  "typeRelation",
+                  "indDonneesErreur",
+                  "factureIXOSID",
+                  "documentArchivelinkID",
+                  "dateFin",
+                  "dateDebut",
+                  "indicateurPA",
+                  "compteBancaire",
+                  "adresseFacturation",
+                  "regroupement",
+                  "listePaiements",
+                  "noCompteContrat",
+                  "dateEcheance",
+                  "montant",
+                  "solde",
+                  "soldeEnSouffrance",
+                  "dernierMontantPaye",
+                  "contientPaiementsPostDates",
+                  "coche",
+                  "listeNoContrat",
+                  "dateProchaineFacture",
+                  "typeDateProchaineFacture",
+                  "segmentation",
+                  "sousConsommationMVE",
+                  "surConsommationMVE",
+                  "revisionAnnuelleMVE",
+                  "infoEligibiliteConfirmationPaiement",
+                  "noPartenaireMandataire",
+                  "infoEligibiliteEntentePaiement",
+                  "infoEligibiliteConfirmPaiementOuEntente",
+                  "indProjection",
+                  "typeEntenteSansProjection",
+                  "gereDansEspaceClient",
+                  "idBanque",
+                  "institution",
+                  "succursale",
+                  "folio",
+                  "libelle",
+                  "indBloquerPI"
+                ]
+              }
+            }
+          },
+          "required": [
+            "noPartenaire",
+            "nom",
+            "idTechnique",
+            "prenom",
+            "courriel",
+            "segmentation",
+            "categorie",
+            "raisonSociale1",
+            "raisonSociale2",
+            "langueCorrespondance",
+            "indPagePersonnelleActive",
+            "indFactureInternet",
+            "indPaiementInternet",
+            "indAucunCompteContrat",
+            "indDonneesConsommation",
+            "dateDerniereVisite",
+            "etatFacturePapier",
+            "listeComptesContrats"
+          ]
+        },
+        "listeContratModel": {
+          "type": "array",
+          "path": "$.listeContratModel",
+          "length": 1,
+          "items": {
+            "type": "object",
+            "path": "$.listeContratModel[0]",
+            "properties": {
+              "codeResponsabilite": {
+                "type": "null",
+                "path": "$.listeContratModel[0].codeResponsabilite"
+              },
+              "noContrat": {
+                "type": "string",
+                "path": "$.listeContratModel[0].noContrat",
+                "format": "numeric-id"
+              },
+              "adresseConsommation": {
+                "type": "string",
+                "path": "$.listeContratModel[0].adresseConsommation"
+              },
+              "idLieuConsommation": {
+                "type": "string",
+                "path": "$.listeContratModel[0].idLieuConsommation",
+                "format": "numeric-id"
+              },
+              "noCompteContrat": {
+                "type": "string",
+                "path": "$.listeContratModel[0].noCompteContrat",
+                "format": "numeric-id"
+              },
+              "noInstallation": {
+                "type": "string",
+                "path": "$.listeContratModel[0].noInstallation",
+                "format": "numeric-id"
+              },
+              "noCompteur": {
+                "type": "string",
+                "path": "$.listeContratModel[0].noCompteur"
+              },
+              "indicateurPortrait": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].indicateurPortrait"
+              },
+              "indicateurDiagnostique": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].indicateurDiagnostique"
+              },
+              "indicateurDiagnostiqueDR": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].indicateurDiagnostiqueDR"
+              },
+              "documentArchivelinkID": {
+                "type": "string",
+                "path": "$.listeContratModel[0].documentArchivelinkID"
+              },
+              "codeDiagnostique": {
+                "type": "string",
+                "path": "$.listeContratModel[0].codeDiagnostique"
+              },
+              "codeDiagnostiqueDR": {
+                "type": "string",
+                "path": "$.listeContratModel[0].codeDiagnostiqueDR"
+              },
+              "indicateurAutoReleve": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].indicateurAutoReleve"
+              },
+              "indicateurMVE": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].indicateurMVE"
+              },
+              "adhesionMVEEncours": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].adhesionMVEEncours"
+              },
+              "retraitMVEEnCours": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].retraitMVEEnCours"
+              },
+              "desinscritMVE": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].desinscritMVE"
+              },
+              "sousConsommationMVE": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].sousConsommationMVE"
+              },
+              "surConsommationMVE": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].surConsommationMVE"
+              },
+              "mntEcart": {
+                "type": "number",
+                "path": "$.listeContratModel[0].mntEcart"
+              },
+              "revisionAnnuelleMVE": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].revisionAnnuelleMVE"
+              },
+              "indicateurEligibiliteMVE": {
+                "type": "null",
+                "path": "$.listeContratModel[0].indicateurEligibiliteMVE"
+              },
+              "codePortrait": {
+                "type": "string",
+                "path": "$.listeContratModel[0].codePortrait"
+              },
+              "codeAutoReleve": {
+                "type": "string",
+                "path": "$.listeContratModel[0].codeAutoReleve"
+              },
+              "noCivique": {
+                "type": "string",
+                "path": "$.listeContratModel[0].noCivique"
+              },
+              "rue": {
+                "type": "string",
+                "path": "$.listeContratModel[0].rue"
+              },
+              "appartement": {
+                "type": "string",
+                "path": "$.listeContratModel[0].appartement"
+              },
+              "ville": {
+                "type": "string",
+                "path": "$.listeContratModel[0].ville"
+              },
+              "codePostal": {
+                "type": "string",
+                "path": "$.listeContratModel[0].codePostal"
+              },
+              "dateDebutContrat": {
+                "type": "string",
+                "path": "$.listeContratModel[0].dateDebutContrat",
+                "format": "date"
+              },
+              "dateFinContrat": {
+                "type": "null",
+                "path": "$.listeContratModel[0].dateFinContrat"
+              },
+              "contratAvecArriveePrevue": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].contratAvecArriveePrevue"
+              },
+              "contratAvecArriveePrevueDansLePasse": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].contratAvecArriveePrevueDansLePasse"
+              },
+              "contratAvecDepartPrevu": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].contratAvecDepartPrevu"
+              },
+              "contratAvecDepartPrevuDansLePasse": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].contratAvecDepartPrevuDansLePasse"
+              },
+              "departPrevuSansAvis": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].departPrevuSansAvis"
+              },
+              "numeroTelephone": {
+                "type": "string",
+                "path": "$.listeContratModel[0].numeroTelephone"
+              },
+              "posteTelephone": {
+                "type": "string",
+                "path": "$.listeContratModel[0].posteTelephone"
+              },
+              "indPuissance": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].indPuissance"
+              },
+              "codeAdhesionCPC": {
+                "type": "string",
+                "path": "$.listeContratModel[0].codeAdhesionCPC"
+              },
+              "codeEligibiliteCPC": {
+                "type": "null",
+                "path": "$.listeContratModel[0].codeEligibiliteCPC"
+              },
+              "codeEligibiliteCLT": {
+                "type": "null",
+                "path": "$.listeContratModel[0].codeEligibiliteCLT"
+              },
+              "tarifActuel": {
+                "type": "string",
+                "path": "$.listeContratModel[0].tarifActuel"
+              },
+              "optionTarifActuel": {
+                "type": "null",
+                "path": "$.listeContratModel[0].optionTarifActuel"
+              },
+              "codeEligibiliteDRCV": {
+                "type": "string",
+                "path": "$.listeContratModel[0].codeEligibiliteDRCV"
+              },
+              "dateDebutEligibiliteDRCV": {
+                "type": "null",
+                "path": "$.listeContratModel[0].dateDebutEligibiliteDRCV"
+              },
+              "indEligibiliteDRCV": {
+                "type": "boolean",
+                "path": "$.listeContratModel[0].indEligibiliteDRCV"
+              },
+              "promoTarifaire": {
+                "type": "null",
+                "path": "$.listeContratModel[0].promoTarifaire"
+              },
+              "statutAbonnementMI": {
+                "type": "string",
+                "path": "$.listeContratModel[0].statutAbonnementMI"
+              },
+              "statutActivationMI": {
+                "type": "string",
+                "path": "$.listeContratModel[0].statutActivationMI"
+              }
+            },
+            "required": [
+              "codeResponsabilite",
+              "noContrat",
+              "adresseConsommation",
+              "idLieuConsommation",
+              "noCompteContrat",
+              "noInstallation",
+              "noCompteur",
+              "indicateurPortrait",
+              "indicateurDiagnostique",
+              "indicateurDiagnostiqueDR",
+              "documentArchivelinkID",
+              "codeDiagnostique",
+              "codeDiagnostiqueDR",
+              "indicateurAutoReleve",
+              "indicateurMVE",
+              "adhesionMVEEncours",
+              "retraitMVEEnCours",
+              "desinscritMVE",
+              "sousConsommationMVE",
+              "surConsommationMVE",
+              "mntEcart",
+              "revisionAnnuelleMVE",
+              "indicateurEligibiliteMVE",
+              "codePortrait",
+              "codeAutoReleve",
+              "noCivique",
+              "rue",
+              "appartement",
+              "ville",
+              "codePostal",
+              "dateDebutContrat",
+              "dateFinContrat",
+              "contratAvecArriveePrevue",
+              "contratAvecArriveePrevueDansLePasse",
+              "contratAvecDepartPrevu",
+              "contratAvecDepartPrevuDansLePasse",
+              "departPrevuSansAvis",
+              "numeroTelephone",
+              "posteTelephone",
+              "indPuissance",
+              "codeAdhesionCPC",
+              "codeEligibiliteCPC",
+              "codeEligibiliteCLT",
+              "tarifActuel",
+              "optionTarifActuel",
+              "codeEligibiliteDRCV",
+              "dateDebutEligibiliteDRCV",
+              "indEligibiliteDRCV",
+              "promoTarifaire",
+              "statutAbonnementMI",
+              "statutActivationMI"
+            ]
+          }
+        },
+        "listeInfoEligibiliteConfirmPaiementOuEntenteModel": {
+          "type": "array",
+          "path": "$.listeInfoEligibiliteConfirmPaiementOuEntenteModel",
+          "length": 0,
+          "items": {}
+        }
+      },
+      "required": [
+        "indEligibilite",
+        "codeRaisonIneligibilite",
+        "infoCockpitPourPartenaireModel",
+        "listeContratModel",
+        "listeInfoEligibiliteConfirmPaiementOuEntenteModel"
+      ]
+    },
+    "contract_info": {
+      "type": "object",
+      "path": "$",
+      "properties": {
+        "noContrat": {
+          "type": "string",
+          "path": "$.noContrat",
+          "format": "numeric-id"
+        },
+        "adresseConsommation": {
+          "type": "string",
+          "path": "$.adresseConsommation"
+        },
+        "idLieuConsommation": {
+          "type": "string",
+          "path": "$.idLieuConsommation",
+          "format": "numeric-id"
+        },
+        "noCompteContrat": {
+          "type": "string",
+          "path": "$.noCompteContrat",
+          "format": "numeric-id"
+        },
+        "noInstallation": {
+          "type": "string",
+          "path": "$.noInstallation",
+          "format": "numeric-id"
+        },
+        "noCompteur": {
+          "type": "string",
+          "path": "$.noCompteur"
+        },
+        "indicateurPortrait": {
+          "type": "boolean",
+          "path": "$.indicateurPortrait"
+        },
+        "indicateurDiagnostique": {
+          "type": "boolean",
+          "path": "$.indicateurDiagnostique"
+        },
+        "indicateurDiagnostiqueDR": {
+          "type": "boolean",
+          "path": "$.indicateurDiagnostiqueDR"
+        },
+        "documentArchivelinkID": {
+          "type": "string",
+          "path": "$.documentArchivelinkID"
+        },
+        "codeDiagnostique": {
+          "type": "string",
+          "path": "$.codeDiagnostique"
+        },
+        "codeDiagnostiqueDR": {
+          "type": "string",
+          "path": "$.codeDiagnostiqueDR"
+        },
+        "indicateurAutoReleve": {
+          "type": "boolean",
+          "path": "$.indicateurAutoReleve"
+        },
+        "indicateurMVE": {
+          "type": "boolean",
+          "path": "$.indicateurMVE"
+        },
+        "adhesionMVEEncours": {
+          "type": "boolean",
+          "path": "$.adhesionMVEEncours"
+        },
+        "retraitMVEEnCours": {
+          "type": "boolean",
+          "path": "$.retraitMVEEnCours"
+        },
+        "desinscritMVE": {
+          "type": "boolean",
+          "path": "$.desinscritMVE"
+        },
+        "sousConsommationMVE": {
+          "type": "boolean",
+          "path": "$.sousConsommationMVE"
+        },
+        "surConsommationMVE": {
+          "type": "boolean",
+          "path": "$.surConsommationMVE"
+        },
+        "mntEcart": {
+          "type": "number",
+          "path": "$.mntEcart"
+        },
+        "revisionAnnuelleMVE": {
+          "type": "boolean",
+          "path": "$.revisionAnnuelleMVE"
+        },
+        "codePortrait": {
+          "type": "string",
+          "path": "$.codePortrait"
+        },
+        "codeAutoReleve": {
+          "type": "string",
+          "path": "$.codeAutoReleve"
+        },
+        "noCivique": {
+          "type": "string",
+          "path": "$.noCivique"
+        },
+        "rue": {
+          "type": "string",
+          "path": "$.rue"
+        },
+        "appartement": {
+          "type": "string",
+          "path": "$.appartement"
+        },
+        "ville": {
+          "type": "string",
+          "path": "$.ville"
+        },
+        "codePostal": {
+          "type": "string",
+          "path": "$.codePostal"
+        },
+        "dateDebutContrat": {
+          "type": "string",
+          "path": "$.dateDebutContrat",
+          "format": "date-time"
+        },
+        "contratAvecArriveePrevue": {
+          "type": "boolean",
+          "path": "$.contratAvecArriveePrevue"
+        },
+        "contratAvecArriveePrevueDansLePasse": {
+          "type": "boolean",
+          "path": "$.contratAvecArriveePrevueDansLePasse"
+        },
+        "contratAvecDepartPrevu": {
+          "type": "boolean",
+          "path": "$.contratAvecDepartPrevu"
+        },
+        "contratAvecDepartPrevuDansLePasse": {
+          "type": "boolean",
+          "path": "$.contratAvecDepartPrevuDansLePasse"
+        },
+        "numeroTelephone": {
+          "type": "string",
+          "path": "$.numeroTelephone"
+        },
+        "posteTelephone": {
+          "type": "string",
+          "path": "$.posteTelephone"
+        },
+        "indPuissance": {
+          "type": "boolean",
+          "path": "$.indPuissance"
+        },
+        "codeAdhesionCPC": {
+          "type": "string",
+          "path": "$.codeAdhesionCPC"
+        },
+        "tarifActuel": {
+          "type": "string",
+          "path": "$.tarifActuel"
+        },
+        "codeEligibiliteDRCV": {
+          "type": "string",
+          "path": "$.codeEligibiliteDRCV"
+        },
+        "indEligibiliteDRCV": {
+          "type": "boolean",
+          "path": "$.indEligibiliteDRCV"
+        },
+        "statutAbonnementMI": {
+          "type": "string",
+          "path": "$.statutAbonnementMI"
+        },
+        "statutActivationMI": {
+          "type": "string",
+          "path": "$.statutActivationMI"
+        }
+      },
+      "required": [
+        "noContrat",
+        "adresseConsommation",
+        "idLieuConsommation",
+        "noCompteContrat",
+        "noInstallation",
+        "noCompteur",
+        "indicateurPortrait",
+        "indicateurDiagnostique",
+        "indicateurDiagnostiqueDR",
+        "documentArchivelinkID",
+        "codeDiagnostique",
+        "codeDiagnostiqueDR",
+        "indicateurAutoReleve",
+        "indicateurMVE",
+        "adhesionMVEEncours",
+        "retraitMVEEnCours",
+        "desinscritMVE",
+        "sousConsommationMVE",
+        "surConsommationMVE",
+        "mntEcart",
+        "revisionAnnuelleMVE",
+        "codePortrait",
+        "codeAutoReleve",
+        "noCivique",
+        "rue",
+        "appartement",
+        "ville",
+        "codePostal",
+        "dateDebutContrat",
+        "contratAvecArriveePrevue",
+        "contratAvecArriveePrevueDansLePasse",
+        "contratAvecDepartPrevu",
+        "contratAvecDepartPrevuDansLePasse",
+        "numeroTelephone",
+        "posteTelephone",
+        "indPuissance",
+        "codeAdhesionCPC",
+        "tarifActuel",
+        "codeEligibiliteDRCV",
+        "indEligibiliteDRCV",
+        "statutAbonnementMI",
+        "statutActivationMI"
+      ]
+    },
+    "periods_info": {
+      "type": "array",
+      "path": "$",
+      "length": 13,
+      "items": {
+        "type": "object",
+        "path": "$[0]",
+        "properties": {
+          "numeroContrat": {
+            "type": "string",
+            "path": "$[0].numeroContrat",
+            "format": "numeric-id"
+          },
+          "dateFinPeriode": {
+            "type": "string",
+            "path": "$[0].dateFinPeriode",
+            "format": "date"
+          },
+          "dateDebutPeriode": {
+            "type": "string",
+            "path": "$[0].dateDebutPeriode",
+            "format": "date"
+          },
+          "dateDerniereLecturePeriode": {
+            "type": "string",
+            "path": "$[0].dateDerniereLecturePeriode",
+            "format": "date"
+          },
+          "heureDerniereLecturePeriode": {
+            "type": "string",
+            "path": "$[0].heureDerniereLecturePeriode"
+          },
+          "nbJourLecturePeriode": {
+            "type": "integer",
+            "path": "$[0].nbJourLecturePeriode"
+          },
+          "nbJourPrevuPeriode": {
+            "type": "integer",
+            "path": "$[0].nbJourPrevuPeriode"
+          },
+          "consoTotalProjetePeriode": {
+            "type": "integer",
+            "path": "$[0].consoTotalProjetePeriode"
+          },
+          "consoTotalPeriode": {
+            "type": "integer",
+            "path": "$[0].consoTotalPeriode"
+          },
+          "consoHautPeriode": {
+            "type": "integer",
+            "path": "$[0].consoHautPeriode"
+          },
+          "consoRegPeriode": {
+            "type": "integer",
+            "path": "$[0].consoRegPeriode"
+          },
+          "moyenneKwhJourPeriode": {
+            "type": "number",
+            "path": "$[0].moyenneKwhJourPeriode"
+          },
+          "montantFacturePeriode": {
+            "type": "number",
+            "path": "$[0].montantFacturePeriode"
+          },
+          "moyenneDollarsJourPeriode": {
+            "type": "number",
+            "path": "$[0].moyenneDollarsJourPeriode"
+          },
+          "codeConsPeriode": {
+            "type": "string",
+            "path": "$[0].codeConsPeriode"
+          },
+          "indMVEPeriode": {
+            "type": "boolean",
+            "path": "$[0].indMVEPeriode"
+          },
+          "tempMoyennePeriode": {
+            "type": "integer",
+            "path": "$[0].tempMoyennePeriode"
+          },
+          "dateDebutPeriodeComparable": {
+            "type": "null",
+            "path": "$[0].dateDebutPeriodeComparable"
+          },
+          "indConsoAjusteePeriode": {
+            "type": "boolean",
+            "path": "$[0].indConsoAjusteePeriode"
+          },
+          "presenceCodeTarifDTPeriode": {
+            "type": "boolean",
+            "path": "$[0].presenceCodeTarifDTPeriode"
+          },
+          "dernierTarif": {
+            "type": "string",
+            "path": "$[0].dernierTarif"
+          },
+          "presencePiscineExterieursPeriode": {
+            "type": "boolean",
+            "path": "$[0].presencePiscineExterieursPeriode"
+          },
+          "indPresenceCodeEvenementPeriode": {
+            "type": "boolean",
+            "path": "$[0].indPresenceCodeEvenementPeriode"
+          },
+          "montantProjetePeriode": {
+            "type": "number",
+            "path": "$[0].montantProjetePeriode"
+          },
+          "multiplicateurFacturation": {
+            "type": "number",
+            "path": "$[0].multiplicateurFacturation"
+          },
+          "indPeriodeHiverPourCalculPuissMinimale": {
+            "type": "boolean",
+            "path": "$[0].indPeriodeHiverPourCalculPuissMinimale"
+          },
+          "puissanceMinAfacturer": {
+            "type": "null",
+            "path": "$[0].puissanceMinAfacturer"
+          },
+          "dateDebPerPuisMinAFacturer": {
+            "type": "null",
+            "path": "$[0].dateDebPerPuisMinAFacturer"
+          },
+          "dateFinPerPuisMinAFacturer": {
+            "type": "null",
+            "path": "$[0].dateFinPerPuisMinAFacturer"
+          },
+          "puissanceApparenteKVA90": {
+            "type": "null",
+            "path": "$[0].puissanceApparenteKVA90"
+          },
+          "datePicPuisApparente": {
+            "type": "null",
+            "path": "$[0].datePicPuisApparente"
+          },
+          "heurePicPuisApparente": {
+            "type": "null",
+            "path": "$[0].heurePicPuisApparente"
+          },
+          "puissanceReelleKW": {
+            "type": "null",
+            "path": "$[0].puissanceReelleKW"
+          },
+          "datePicPuisReelle": {
+            "type": "null",
+            "path": "$[0].datePicPuisReelle"
+          },
+          "heurePicPuisReelle": {
+            "type": "null",
+            "path": "$[0].heurePicPuisReelle"
+          },
+          "puissanceFactureeKW": {
+            "type": "null",
+            "path": "$[0].puissanceFactureeKW"
+          },
+          "facteurUtilisation": {
+            "type": "null",
+            "path": "$[0].facteurUtilisation"
+          },
+          "facteurDePuissance": {
+            "type": "null",
+            "path": "$[0].facteurDePuissance"
+          },
+          "coutCentkWh": {
+            "type": "number",
+            "path": "$[0].coutCentkWh"
+          },
+          "codePuissUtiliseePourFacturation": {
+            "type": "null",
+            "path": "$[0].codePuissUtiliseePourFacturation"
+          },
+          "montantVenteTotalProjete": {
+            "type": "null",
+            "path": "$[0].montantVenteTotalProjete"
+          },
+          "dateDebutPeriodeComparableSelectionnee": {
+            "type": "null",
+            "path": "$[0].dateDebutPeriodeComparableSelectionnee"
+          },
+          "codeQualiteDonneesEnergieHeure": {
+            "type": "string",
+            "path": "$[0].codeQualiteDonneesEnergieHeure"
+          },
+          "codeQualiteDonneesPuissanceHeure": {
+            "type": "string",
+            "path": "$[0].codeQualiteDonneesPuissanceHeure"
+          },
+          "codeQualiteDonneesEnergieJour": {
+            "type": "string",
+            "path": "$[0].codeQualiteDonneesEnergieJour"
+          },
+          "codeQualiteDonneesPuissanceJour": {
+            "type": "string",
+            "path": "$[0].codeQualiteDonneesPuissanceJour"
+          },
+          "nbKwhConsoHautTarifFlexPeriode": {
+            "type": "integer",
+            "path": "$[0].nbKwhConsoHautTarifFlexPeriode"
+          },
+          "nbHeurePointeCriritiqueCPCPeriode": {
+            "type": "integer",
+            "path": "$[0].nbHeurePointeCriritiqueCPCPeriode"
+          },
+          "nbHeurePointeCriritiqueGDPPeriode": {
+            "type": "integer",
+            "path": "$[0].nbHeurePointeCriritiqueGDPPeriode"
+          },
+          "affichageTarifFlexPeriode": {
+            "type": "boolean",
+            "path": "$[0].affichageTarifFlexPeriode"
+          },
+          "indTempTarifBiEnergiePeriode": {
+            "type": "boolean",
+            "path": "$[0].indTempTarifBiEnergiePeriode"
+          },
+          "codeDerniereOptionTarifPeriode": {
+            "type": "string",
+            "path": "$[0].codeDerniereOptionTarifPeriode"
+          },
+          "montantGainPerteDTversusBase": {
+            "type": "number",
+            "path": "$[0].montantGainPerteDTversusBase"
+          },
+          "isEligibleDRCV": {
+            "type": "boolean",
+            "path": "$[0].isEligibleDRCV"
+          },
+          "montantChauffagePeriode": {
+            "type": "integer",
+            "path": "$[0].montantChauffagePeriode"
+          },
+          "montantClimatisationPeriode": {
+            "type": "integer",
+            "path": "$[0].montantClimatisationPeriode"
+          },
+          "kwhChauffagePeriode": {
+            "type": "integer",
+            "path": "$[0].kwhChauffagePeriode"
+          },
+          "kwhClimatisationPeriode": {
+            "type": "integer",
+            "path": "$[0].kwhClimatisationPeriode"
+          },
+          "montantVenteTranche1": {
+            "type": "number",
+            "path": "$[0].montantVenteTranche1"
+          },
+          "listePrixTranche1": {
+            "type": "array",
+            "path": "$[0].listePrixTranche1",
+            "length": 1,
+            "items": {
+              "type": "number",
+              "path": "$[0].listePrixTranche1[0]"
+            }
+          },
+          "montantVenteTranche2": {
+            "type": "number",
+            "path": "$[0].montantVenteTranche2"
+          },
+          "listePrixTranche2": {
+            "type": "array",
+            "path": "$[0].listePrixTranche2",
+            "length": 0,
+            "items": {}
+          },
+          "montantVentePointeCritique": {
+            "type": "number",
+            "path": "$[0].montantVentePointeCritique"
+          },
+          "listePrixPointeCritique": {
+            "type": "array",
+            "path": "$[0].listePrixPointeCritique",
+            "length": 0,
+            "items": {}
+          },
+          "montantVenteFraisAccesReseau": {
+            "type": "number",
+            "path": "$[0].montantVenteFraisAccesReseau"
+          },
+          "listePrixFraisAccesReseau": {
+            "type": "array",
+            "path": "$[0].listePrixFraisAccesReseau",
+            "length": 1,
+            "items": {
+              "type": "number",
+              "path": "$[0].listePrixFraisAccesReseau[0]"
+            }
+          },
+          "montantCreditCPC": {
+            "type": "number",
+            "path": "$[0].montantCreditCPC"
+          },
+          "listePrixCreditCPC": {
+            "type": "array",
+            "path": "$[0].listePrixCreditCPC",
+            "length": 0,
+            "items": {}
+          },
+          "typeOffreMontantCredit": {
+            "type": "string",
+            "path": "$[0].typeOffreMontantCredit"
+          },
+          "labelLongTarif": {
+            "type": "string",
+            "path": "$[0].labelLongTarif"
+          },
+          "labelCourtTarif": {
+            "type": "string",
+            "path": "$[0].labelCourtTarif"
+          },
+          "labelLongOptionTarif": {
+            "type": "string",
+            "path": "$[0].labelLongOptionTarif"
+          },
+          "labelCourtOptionTarif": {
+            "type": "string",
+            "path": "$[0].labelCourtOptionTarif"
+          },
+          "zoneMessageHTMLPeriode": {
+            "type": "null",
+            "path": "$[0].zoneMessageHTMLPeriode"
+          },
+          "codeImageBackgroundPeriode": {
+            "type": "string",
+            "path": "$[0].codeImageBackgroundPeriode"
+          },
+          "zoneMsgHTMLHistPerEnergie": {
+            "type": "null",
+            "path": "$[0].zoneMsgHTMLHistPerEnergie"
+          },
+          "zoneMsgHTMLHistPerPuissance": {
+            "type": "null",
+            "path": "$[0].zoneMsgHTMLHistPerPuissance"
+          },
+          "zoneMsgHTMLHistPerCout": {
+            "type": "null",
+            "path": "$[0].zoneMsgHTMLHistPerCout"
+          },
+          "zoneMsgHTMLHistJourEnergie": {
+            "type": "null",
+            "path": "$[0].zoneMsgHTMLHistJourEnergie"
+          },
+          "zoneMsgHTMLHistHeureEnergie": {
+            "type": "null",
+            "path": "$[0].zoneMsgHTMLHistHeureEnergie"
+          },
+          "zoneMessageHTMLHistoMensuel": {
+            "type": "null",
+            "path": "$[0].zoneMessageHTMLHistoMensuel"
+          },
+          "urlComprendreTarif": {
+            "type": "string",
+            "path": "$[0].urlComprendreTarif"
+          },
+          "listeDonneesConsoTypeCout": {
+            "type": "array",
+            "path": "$[0].listeDonneesConsoTypeCout",
+            "length": 5,
+            "items": {
+              "type": "object",
+              "path": "$[0].listeDonneesConsoTypeCout[0]",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "path": "$[0].listeDonneesConsoTypeCout[0].type"
+                },
+                "label": {
+                  "type": "string",
+                  "path": "$[0].listeDonneesConsoTypeCout[0].label"
+                },
+                "legendLabel": {
+                  "type": "string",
+                  "path": "$[0].listeDonneesConsoTypeCout[0].legendLabel"
+                },
+                "montant": {
+                  "type": "number",
+                  "path": "$[0].listeDonneesConsoTypeCout[0].montant"
+                }
+              },
+              "required": [
+                "type",
+                "label",
+                "legendLabel",
+                "montant"
+              ]
+            }
+          },
+          "texteValeurChauffage": {
+            "type": "null",
+            "path": "$[0].texteValeurChauffage"
+          },
+          "texteValeurClimatisation": {
+            "type": "null",
+            "path": "$[0].texteValeurClimatisation"
+          },
+          "tooltipIdChauffage": {
+            "type": "string",
+            "path": "$[0].tooltipIdChauffage"
+          },
+          "tooltipIdClimatisation": {
+            "type": "string",
+            "path": "$[0].tooltipIdClimatisation"
+          },
+          "tooltipIdChauffageComparaison": {
+            "type": "string",
+            "path": "$[0].tooltipIdChauffageComparaison"
+          },
+          "tooltipIdClimatisationComparaison": {
+            "type": "string",
+            "path": "$[0].tooltipIdClimatisationComparaison"
+          }
+        },
+        "required": [
+          "numeroContrat",
+          "dateFinPeriode",
+          "dateDebutPeriode",
+          "dateDerniereLecturePeriode",
+          "heureDerniereLecturePeriode",
+          "nbJourLecturePeriode",
+          "nbJourPrevuPeriode",
+          "consoTotalProjetePeriode",
+          "consoTotalPeriode",
+          "consoHautPeriode",
+          "consoRegPeriode",
+          "moyenneKwhJourPeriode",
+          "montantFacturePeriode",
+          "moyenneDollarsJourPeriode",
+          "codeConsPeriode",
+          "indMVEPeriode",
+          "tempMoyennePeriode",
+          "dateDebutPeriodeComparable",
+          "indConsoAjusteePeriode",
+          "presenceCodeTarifDTPeriode",
+          "dernierTarif",
+          "presencePiscineExterieursPeriode",
+          "indPresenceCodeEvenementPeriode",
+          "montantProjetePeriode",
+          "multiplicateurFacturation",
+          "indPeriodeHiverPourCalculPuissMinimale",
+          "puissanceMinAfacturer",
+          "dateDebPerPuisMinAFacturer",
+          "dateFinPerPuisMinAFacturer",
+          "puissanceApparenteKVA90",
+          "datePicPuisApparente",
+          "heurePicPuisApparente",
+          "puissanceReelleKW",
+          "datePicPuisReelle",
+          "heurePicPuisReelle",
+          "puissanceFactureeKW",
+          "facteurUtilisation",
+          "facteurDePuissance",
+          "coutCentkWh",
+          "codePuissUtiliseePourFacturation",
+          "montantVenteTotalProjete",
+          "dateDebutPeriodeComparableSelectionnee",
+          "codeQualiteDonneesEnergieHeure",
+          "codeQualiteDonneesPuissanceHeure",
+          "codeQualiteDonneesEnergieJour",
+          "codeQualiteDonneesPuissanceJour",
+          "nbKwhConsoHautTarifFlexPeriode",
+          "nbHeurePointeCriritiqueCPCPeriode",
+          "nbHeurePointeCriritiqueGDPPeriode",
+          "affichageTarifFlexPeriode",
+          "indTempTarifBiEnergiePeriode",
+          "codeDerniereOptionTarifPeriode",
+          "montantGainPerteDTversusBase",
+          "isEligibleDRCV",
+          "montantChauffagePeriode",
+          "montantClimatisationPeriode",
+          "kwhChauffagePeriode",
+          "kwhClimatisationPeriode",
+          "montantVenteTranche1",
+          "listePrixTranche1",
+          "montantVenteTranche2",
+          "listePrixTranche2",
+          "montantVentePointeCritique",
+          "listePrixPointeCritique",
+          "montantVenteFraisAccesReseau",
+          "listePrixFraisAccesReseau",
+          "montantCreditCPC",
+          "listePrixCreditCPC",
+          "typeOffreMontantCredit",
+          "labelLongTarif",
+          "labelCourtTarif",
+          "labelLongOptionTarif",
+          "labelCourtOptionTarif",
+          "zoneMessageHTMLPeriode",
+          "codeImageBackgroundPeriode",
+          "zoneMsgHTMLHistPerEnergie",
+          "zoneMsgHTMLHistPerPuissance",
+          "zoneMsgHTMLHistPerCout",
+          "zoneMsgHTMLHistJourEnergie",
+          "zoneMsgHTMLHistHeureEnergie",
+          "zoneMessageHTMLHistoMensuel",
+          "urlComprendreTarif",
+          "listeDonneesConsoTypeCout",
+          "texteValeurChauffage",
+          "texteValeurClimatisation",
+          "tooltipIdChauffage",
+          "tooltipIdClimatisation",
+          "tooltipIdChauffageComparaison",
+          "tooltipIdClimatisationComparaison"
+        ]
+      }
+    },
+    "outages": {
+      "type": "object",
+      "path": "$",
+      "properties": {
+        "idLieuConso": {
+          "type": "string",
+          "path": "$.idLieuConso",
+          "format": "numeric-id"
+        },
+        "etat": {
+          "type": "string",
+          "path": "$.etat"
+        },
+        "date": {
+          "type": "string",
+          "path": "$.date",
+          "format": "date-time"
+        },
+        "repriseGraduellePossible": {
+          "type": "boolean",
+          "path": "$.repriseGraduellePossible"
+        },
+        "declencheurReprise": {
+          "type": "boolean",
+          "path": "$.declencheurReprise"
+        },
+        "interruptions": {
+          "type": "array",
+          "path": "$.interruptions",
+          "length": 0,
+          "items": {}
+        }
+      },
+      "required": [
+        "idLieuConso",
+        "etat",
+        "date",
+        "repriseGraduellePossible",
+        "declencheurReprise",
+        "interruptions"
+      ]
+    },
+    "hourly_consumption": {
+      "type": "object",
+      "path": "$",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "path": "$.success"
+        },
+        "results": {
+          "type": "object",
+          "path": "$.results",
+          "properties": {
+            "codeTarif": {
+              "type": "string",
+              "path": "$.results.codeTarif"
+            },
+            "affichageTarifFlex": {
+              "type": "boolean",
+              "path": "$.results.affichageTarifFlex"
+            },
+            "indTempTarifBiEnergieQuot": {
+              "type": "boolean",
+              "path": "$.results.indTempTarifBiEnergieQuot"
+            },
+            "dateJour": {
+              "type": "string",
+              "path": "$.results.dateJour",
+              "format": "date"
+            },
+            "echelleMinKwhHeureParJour": {
+              "type": "integer",
+              "path": "$.results.echelleMinKwhHeureParJour"
+            },
+            "echelleMaxKwhHeureParJour": {
+              "type": "integer",
+              "path": "$.results.echelleMaxKwhHeureParJour"
+            },
+            "zoneMsgHTMLNonDispEnergie": {
+              "type": "null",
+              "path": "$.results.zoneMsgHTMLNonDispEnergie"
+            },
+            "zoneMsgHTMLNonDispPuissance": {
+              "type": "string",
+              "path": "$.results.zoneMsgHTMLNonDispPuissance"
+            },
+            "indErreurJourneeEnergie": {
+              "type": "boolean",
+              "path": "$.results.indErreurJourneeEnergie"
+            },
+            "indErreurJourneePuissance": {
+              "type": "boolean",
+              "path": "$.results.indErreurJourneePuissance"
+            },
+            "listeDonneesConsoEnergieHoraire": {
+              "type": "array",
+              "path": "$.results.listeDonneesConsoEnergieHoraire",
+              "length": 24,
+              "items": {
+                "type": "object",
+                "path": "$.results.listeDonneesConsoEnergieHoraire[0]",
+                "properties": {
+                  "heure": {
+                    "type": "string",
+                    "path": "$.results.listeDonneesConsoEnergieHoraire[0].heure"
+                  },
+                  "consoReg": {
+                    "type": "number",
+                    "path": "$.results.listeDonneesConsoEnergieHoraire[0].consoReg"
+                  },
+                  "consoHaut": {
+                    "type": "number",
+                    "path": "$.results.listeDonneesConsoEnergieHoraire[0].consoHaut"
+                  },
+                  "consoTotal": {
+                    "type": "number",
+                    "path": "$.results.listeDonneesConsoEnergieHoraire[0].consoTotal"
+                  },
+                  "codeConso": {
+                    "type": "string",
+                    "path": "$.results.listeDonneesConsoEnergieHoraire[0].codeConso"
+                  },
+                  "codeEvemenentEnergie": {
+                    "type": "string",
+                    "path": "$.results.listeDonneesConsoEnergieHoraire[0].codeEvemenentEnergie"
+                  },
+                  "zoneMessageHTMLEnergie": {
+                    "type": "null",
+                    "path": "$.results.listeDonneesConsoEnergieHoraire[0].zoneMessageHTMLEnergie"
+                  }
+                },
+                "required": [
+                  "heure",
+                  "consoReg",
+                  "consoHaut",
+                  "consoTotal",
+                  "codeConso",
+                  "codeEvemenentEnergie",
+                  "zoneMessageHTMLEnergie"
+                ]
+              }
+            },
+            "listeDonneesConsoPuissanceHoraire": {
+              "type": "array",
+              "path": "$.results.listeDonneesConsoPuissanceHoraire",
+              "length": 0,
+              "items": {}
+            }
+          },
+          "required": [
+            "codeTarif",
+            "affichageTarifFlex",
+            "indTempTarifBiEnergieQuot",
+            "dateJour",
+            "echelleMinKwhHeureParJour",
+            "echelleMaxKwhHeureParJour",
+            "zoneMsgHTMLNonDispEnergie",
+            "zoneMsgHTMLNonDispPuissance",
+            "indErreurJourneeEnergie",
+            "indErreurJourneePuissance",
+            "listeDonneesConsoEnergieHoraire",
+            "listeDonneesConsoPuissanceHoraire"
+          ]
+        }
+      },
+      "required": [
+        "success",
+        "results"
+      ]
+    },
+    "daily_consumption": {
+      "type": "object",
+      "path": "$",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "path": "$.success"
+        },
+        "results": {
+          "type": "array",
+          "path": "$.results",
+          "length": 1,
+          "items": {
+            "type": "object",
+            "path": "$.results[0]",
+            "properties": {
+              "courant": {
+                "type": "object",
+                "path": "$.results[0].courant",
+                "properties": {
+                  "dateJourConso": {
+                    "type": "string",
+                    "path": "$.results[0].courant.dateJourConso",
+                    "format": "date"
+                  },
+                  "zoneMessageHTMLQuot": {
+                    "type": "null",
+                    "path": "$.results[0].courant.zoneMessageHTMLQuot"
+                  },
+                  "consoRegQuot": {
+                    "type": "number",
+                    "path": "$.results[0].courant.consoRegQuot"
+                  },
+                  "consoHautQuot": {
+                    "type": "number",
+                    "path": "$.results[0].courant.consoHautQuot"
+                  },
+                  "consoTotalQuot": {
+                    "type": "number",
+                    "path": "$.results[0].courant.consoTotalQuot"
+                  },
+                  "codeConsoQuot": {
+                    "type": "string",
+                    "path": "$.results[0].courant.codeConsoQuot"
+                  },
+                  "tempMoyenneQuot": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.tempMoyenneQuot"
+                  },
+                  "codeTarifQuot": {
+                    "type": "string",
+                    "path": "$.results[0].courant.codeTarifQuot"
+                  },
+                  "affichageTarifFlexQuot": {
+                    "type": "boolean",
+                    "path": "$.results[0].courant.affichageTarifFlexQuot"
+                  },
+                  "indTempTarifBiEnergieQuot": {
+                    "type": "boolean",
+                    "path": "$.results[0].courant.indTempTarifBiEnergieQuot"
+                  },
+                  "codeEvenementQuot": {
+                    "type": "string",
+                    "path": "$.results[0].courant.codeEvenementQuot"
+                  }
+                },
+                "required": [
+                  "dateJourConso",
+                  "zoneMessageHTMLQuot",
+                  "consoRegQuot",
+                  "consoHautQuot",
+                  "consoTotalQuot",
+                  "codeConsoQuot",
+                  "tempMoyenneQuot",
+                  "codeTarifQuot",
+                  "affichageTarifFlexQuot",
+                  "indTempTarifBiEnergieQuot",
+                  "codeEvenementQuot"
+                ]
+              },
+              "compare": {
+                "type": "object",
+                "path": "$.results[0].compare",
+                "properties": {
+                  "dateJourConso": {
+                    "type": "string",
+                    "path": "$.results[0].compare.dateJourConso",
+                    "format": "date"
+                  },
+                  "zoneMessageHTMLQuot": {
+                    "type": "null",
+                    "path": "$.results[0].compare.zoneMessageHTMLQuot"
+                  },
+                  "consoRegQuot": {
+                    "type": "number",
+                    "path": "$.results[0].compare.consoRegQuot"
+                  },
+                  "consoHautQuot": {
+                    "type": "number",
+                    "path": "$.results[0].compare.consoHautQuot"
+                  },
+                  "consoTotalQuot": {
+                    "type": "number",
+                    "path": "$.results[0].compare.consoTotalQuot"
+                  },
+                  "codeConsoQuot": {
+                    "type": "string",
+                    "path": "$.results[0].compare.codeConsoQuot"
+                  },
+                  "tempMoyenneQuot": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.tempMoyenneQuot"
+                  },
+                  "codeTarifQuot": {
+                    "type": "string",
+                    "path": "$.results[0].compare.codeTarifQuot"
+                  },
+                  "affichageTarifFlexQuot": {
+                    "type": "boolean",
+                    "path": "$.results[0].compare.affichageTarifFlexQuot"
+                  },
+                  "indTempTarifBiEnergieQuot": {
+                    "type": "boolean",
+                    "path": "$.results[0].compare.indTempTarifBiEnergieQuot"
+                  },
+                  "codeEvenementQuot": {
+                    "type": "string",
+                    "path": "$.results[0].compare.codeEvenementQuot"
+                  }
+                },
+                "required": [
+                  "dateJourConso",
+                  "zoneMessageHTMLQuot",
+                  "consoRegQuot",
+                  "consoHautQuot",
+                  "consoTotalQuot",
+                  "codeConsoQuot",
+                  "tempMoyenneQuot",
+                  "codeTarifQuot",
+                  "affichageTarifFlexQuot",
+                  "indTempTarifBiEnergieQuot",
+                  "codeEvenementQuot"
+                ]
+              }
+            },
+            "required": [
+              "courant",
+              "compare"
+            ]
+          }
+        }
+      },
+      "required": [
+        "success",
+        "results"
+      ]
+    },
+    "monthly_consumption": {
+      "type": "object",
+      "path": "$",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "path": "$.success"
+        },
+        "results": {
+          "type": "array",
+          "path": "$.results",
+          "length": 12,
+          "items": {
+            "type": "object",
+            "path": "$.results[0]",
+            "properties": {
+              "courant": {
+                "type": "object",
+                "path": "$.results[0].courant",
+                "properties": {
+                  "dateDebutMois": {
+                    "type": "string",
+                    "path": "$.results[0].courant.dateDebutMois",
+                    "format": "date"
+                  },
+                  "dateFinMois": {
+                    "type": "string",
+                    "path": "$.results[0].courant.dateFinMois",
+                    "format": "date"
+                  },
+                  "codeConsoMois": {
+                    "type": "string",
+                    "path": "$.results[0].courant.codeConsoMois"
+                  },
+                  "nbJourCalendrierMois": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.nbJourCalendrierMois"
+                  },
+                  "presenceTarifDTmois": {
+                    "type": "boolean",
+                    "path": "$.results[0].courant.presenceTarifDTmois"
+                  },
+                  "tempMoyenneMois": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.tempMoyenneMois"
+                  },
+                  "moyenneKwhJourMois": {
+                    "type": "number",
+                    "path": "$.results[0].courant.moyenneKwhJourMois"
+                  },
+                  "nbHeureTarifGDPmois": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.nbHeureTarifGDPmois"
+                  },
+                  "affichageTarifFlexMois": {
+                    "type": "boolean",
+                    "path": "$.results[0].courant.affichageTarifFlexMois"
+                  },
+                  "indTempTarifBiEnergieMois": {
+                    "type": "boolean",
+                    "path": "$.results[0].courant.indTempTarifBiEnergieMois"
+                  },
+                  "consoRegMois": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.consoRegMois"
+                  },
+                  "consoHautMois": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.consoHautMois"
+                  },
+                  "consoTotalMois": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.consoTotalMois"
+                  },
+                  "zoneMessageHTMLMois": {
+                    "type": "null",
+                    "path": "$.results[0].courant.zoneMessageHTMLMois"
+                  },
+                  "indPresenceCodeEvenementMois": {
+                    "type": "boolean",
+                    "path": "$.results[0].courant.indPresenceCodeEvenementMois"
+                  }
+                },
+                "required": [
+                  "dateDebutMois",
+                  "dateFinMois",
+                  "codeConsoMois",
+                  "nbJourCalendrierMois",
+                  "presenceTarifDTmois",
+                  "tempMoyenneMois",
+                  "moyenneKwhJourMois",
+                  "nbHeureTarifGDPmois",
+                  "affichageTarifFlexMois",
+                  "indTempTarifBiEnergieMois",
+                  "consoRegMois",
+                  "consoHautMois",
+                  "consoTotalMois",
+                  "zoneMessageHTMLMois",
+                  "indPresenceCodeEvenementMois"
+                ]
+              },
+              "compare": {
+                "type": "object",
+                "path": "$.results[0].compare",
+                "properties": {
+                  "dateDebutMois": {
+                    "type": "string",
+                    "path": "$.results[0].compare.dateDebutMois",
+                    "format": "date"
+                  },
+                  "dateFinMois": {
+                    "type": "string",
+                    "path": "$.results[0].compare.dateFinMois",
+                    "format": "date"
+                  },
+                  "codeConsoMois": {
+                    "type": "string",
+                    "path": "$.results[0].compare.codeConsoMois"
+                  },
+                  "nbJourCalendrierMois": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.nbJourCalendrierMois"
+                  },
+                  "presenceTarifDTmois": {
+                    "type": "boolean",
+                    "path": "$.results[0].compare.presenceTarifDTmois"
+                  },
+                  "tempMoyenneMois": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.tempMoyenneMois"
+                  },
+                  "moyenneKwhJourMois": {
+                    "type": "number",
+                    "path": "$.results[0].compare.moyenneKwhJourMois"
+                  },
+                  "nbHeureTarifGDPmois": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.nbHeureTarifGDPmois"
+                  },
+                  "affichageTarifFlexMois": {
+                    "type": "boolean",
+                    "path": "$.results[0].compare.affichageTarifFlexMois"
+                  },
+                  "indTempTarifBiEnergieMois": {
+                    "type": "boolean",
+                    "path": "$.results[0].compare.indTempTarifBiEnergieMois"
+                  },
+                  "consoRegMois": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.consoRegMois"
+                  },
+                  "consoHautMois": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.consoHautMois"
+                  },
+                  "consoTotalMois": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.consoTotalMois"
+                  },
+                  "zoneMessageHTMLMois": {
+                    "type": "null",
+                    "path": "$.results[0].compare.zoneMessageHTMLMois"
+                  },
+                  "indPresenceCodeEvenementMois": {
+                    "type": "boolean",
+                    "path": "$.results[0].compare.indPresenceCodeEvenementMois"
+                  }
+                },
+                "required": [
+                  "dateDebutMois",
+                  "dateFinMois",
+                  "codeConsoMois",
+                  "nbJourCalendrierMois",
+                  "presenceTarifDTmois",
+                  "tempMoyenneMois",
+                  "moyenneKwhJourMois",
+                  "nbHeureTarifGDPmois",
+                  "affichageTarifFlexMois",
+                  "indTempTarifBiEnergieMois",
+                  "consoRegMois",
+                  "consoHautMois",
+                  "consoTotalMois",
+                  "zoneMessageHTMLMois",
+                  "indPresenceCodeEvenementMois"
+                ]
+              }
+            },
+            "required": [
+              "courant",
+              "compare"
+            ]
+          }
+        }
+      },
+      "required": [
+        "success",
+        "results"
+      ]
+    },
+    "annual_consumption": {
+      "type": "object",
+      "path": "$",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "path": "$.success"
+        },
+        "results": {
+          "type": "array",
+          "path": "$.results",
+          "length": 1,
+          "items": {
+            "type": "object",
+            "path": "$.results[0]",
+            "properties": {
+              "courant": {
+                "type": "object",
+                "path": "$.results[0].courant",
+                "properties": {
+                  "dateDebutAnnee": {
+                    "type": "string",
+                    "path": "$.results[0].courant.dateDebutAnnee",
+                    "format": "date"
+                  },
+                  "dateFinAnnee": {
+                    "type": "string",
+                    "path": "$.results[0].courant.dateFinAnnee",
+                    "format": "date"
+                  },
+                  "nbJourCalendrierAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.nbJourCalendrierAnnee"
+                  },
+                  "moyenneKwhJourAnnee": {
+                    "type": "number",
+                    "path": "$.results[0].courant.moyenneKwhJourAnnee"
+                  },
+                  "consoRegAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.consoRegAnnee"
+                  },
+                  "consoHautAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.consoHautAnnee"
+                  },
+                  "consoTotalAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.consoTotalAnnee"
+                  },
+                  "montantFactureAnnee": {
+                    "type": "number",
+                    "path": "$.results[0].courant.montantFactureAnnee"
+                  },
+                  "moyenneDollarsJourAnnee": {
+                    "type": "number",
+                    "path": "$.results[0].courant.moyenneDollarsJourAnnee"
+                  },
+                  "isEligibleDRCV": {
+                    "type": "boolean",
+                    "path": "$.results[0].courant.isEligibleDRCV"
+                  },
+                  "codeTarifAnnee": {
+                    "type": "string",
+                    "path": "$.results[0].courant.codeTarifAnnee"
+                  },
+                  "montantGainPerteDTversusBaseAnnee": {
+                    "type": "number",
+                    "path": "$.results[0].courant.montantGainPerteDTversusBaseAnnee"
+                  },
+                  "coutCentkWh": {
+                    "type": "number",
+                    "path": "$.results[0].courant.coutCentkWh"
+                  },
+                  "zoneMsgHTMLAnneeSuiviDT": {
+                    "type": "string",
+                    "path": "$.results[0].courant.zoneMsgHTMLAnneeSuiviDT"
+                  },
+                  "texteValeurChauffage": {
+                    "type": "null",
+                    "path": "$.results[0].courant.texteValeurChauffage"
+                  },
+                  "texteValeurClimatisation": {
+                    "type": "null",
+                    "path": "$.results[0].courant.texteValeurClimatisation"
+                  },
+                  "tooltipIdChauffage": {
+                    "type": "string",
+                    "path": "$.results[0].courant.tooltipIdChauffage"
+                  },
+                  "tooltipIdClimatisation": {
+                    "type": "string",
+                    "path": "$.results[0].courant.tooltipIdClimatisation"
+                  },
+                  "tooltipIdChauffageComparaison": {
+                    "type": "string",
+                    "path": "$.results[0].courant.tooltipIdChauffageComparaison"
+                  },
+                  "tooltipIdClimatisationComparaison": {
+                    "type": "string",
+                    "path": "$.results[0].courant.tooltipIdClimatisationComparaison"
+                  },
+                  "montantChauffageAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.montantChauffageAnnee"
+                  },
+                  "montantClimatisationAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.montantClimatisationAnnee"
+                  },
+                  "kwhChauffageAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.kwhChauffageAnnee"
+                  },
+                  "kwhClimatisationAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].courant.kwhClimatisationAnnee"
+                  }
+                },
+                "required": [
+                  "dateDebutAnnee",
+                  "dateFinAnnee",
+                  "nbJourCalendrierAnnee",
+                  "moyenneKwhJourAnnee",
+                  "consoRegAnnee",
+                  "consoHautAnnee",
+                  "consoTotalAnnee",
+                  "montantFactureAnnee",
+                  "moyenneDollarsJourAnnee",
+                  "isEligibleDRCV",
+                  "codeTarifAnnee",
+                  "montantGainPerteDTversusBaseAnnee",
+                  "coutCentkWh",
+                  "zoneMsgHTMLAnneeSuiviDT",
+                  "texteValeurChauffage",
+                  "texteValeurClimatisation",
+                  "tooltipIdChauffage",
+                  "tooltipIdClimatisation",
+                  "tooltipIdChauffageComparaison",
+                  "tooltipIdClimatisationComparaison",
+                  "montantChauffageAnnee",
+                  "montantClimatisationAnnee",
+                  "kwhChauffageAnnee",
+                  "kwhClimatisationAnnee"
+                ]
+              },
+              "compare": {
+                "type": "object",
+                "path": "$.results[0].compare",
+                "properties": {
+                  "dateDebutAnnee": {
+                    "type": "string",
+                    "path": "$.results[0].compare.dateDebutAnnee",
+                    "format": "date"
+                  },
+                  "dateFinAnnee": {
+                    "type": "string",
+                    "path": "$.results[0].compare.dateFinAnnee",
+                    "format": "date"
+                  },
+                  "nbJourCalendrierAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.nbJourCalendrierAnnee"
+                  },
+                  "moyenneKwhJourAnnee": {
+                    "type": "number",
+                    "path": "$.results[0].compare.moyenneKwhJourAnnee"
+                  },
+                  "consoRegAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.consoRegAnnee"
+                  },
+                  "consoHautAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.consoHautAnnee"
+                  },
+                  "consoTotalAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.consoTotalAnnee"
+                  },
+                  "montantFactureAnnee": {
+                    "type": "number",
+                    "path": "$.results[0].compare.montantFactureAnnee"
+                  },
+                  "moyenneDollarsJourAnnee": {
+                    "type": "number",
+                    "path": "$.results[0].compare.moyenneDollarsJourAnnee"
+                  },
+                  "isEligibleDRCV": {
+                    "type": "boolean",
+                    "path": "$.results[0].compare.isEligibleDRCV"
+                  },
+                  "codeTarifAnnee": {
+                    "type": "string",
+                    "path": "$.results[0].compare.codeTarifAnnee"
+                  },
+                  "montantGainPerteDTversusBaseAnnee": {
+                    "type": "number",
+                    "path": "$.results[0].compare.montantGainPerteDTversusBaseAnnee"
+                  },
+                  "montantChauffageAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.montantChauffageAnnee"
+                  },
+                  "montantClimatisationAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.montantClimatisationAnnee"
+                  },
+                  "kwhChauffageAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.kwhChauffageAnnee"
+                  },
+                  "kwhClimatisationAnnee": {
+                    "type": "integer",
+                    "path": "$.results[0].compare.kwhClimatisationAnnee"
+                  },
+                  "coutCentkWh": {
+                    "type": "number",
+                    "path": "$.results[0].compare.coutCentkWh"
+                  }
+                },
+                "required": [
+                  "dateDebutAnnee",
+                  "dateFinAnnee",
+                  "nbJourCalendrierAnnee",
+                  "moyenneKwhJourAnnee",
+                  "consoRegAnnee",
+                  "consoHautAnnee",
+                  "consoTotalAnnee",
+                  "montantFactureAnnee",
+                  "moyenneDollarsJourAnnee",
+                  "isEligibleDRCV",
+                  "codeTarifAnnee",
+                  "montantGainPerteDTversusBaseAnnee",
+                  "montantChauffageAnnee",
+                  "montantClimatisationAnnee",
+                  "kwhChauffageAnnee",
+                  "kwhClimatisationAnnee",
+                  "coutCentkWh"
+                ]
+              }
+            },
+            "required": [
+              "courant",
+              "compare"
+            ]
+          }
+        }
+      },
+      "required": [
+        "success",
+        "results"
+      ]
+    }
+  },
+  "anonymized_samples": {
+    "user_info": [
+      {
+        "noPartenaireDemandeur": "1111111111",
+        "nom1Demandeur": "56ec",
+        "nom2Demandeur": "427611da",
+        "noPartenaireTitulaire": "1111111111",
+        "nom1Titulaire": "56ec",
+        "nom2Titulaire": "427611da",
+        "typeRelation": "",
+        "indEcActif": true,
+        "indFavori": false,
+        "nickname": ""
+      }
+    ],
+    "customer_info": {
+      "indEligibilite": true,
+      "codeRaisonIneligibilite": "2ac",
+      "infoCockpitPourPartenaireModel": {
+        "noPartenaire": "",
+        "nom": "427611da",
+        "idTechnique": "89001F970",
+        "prenom": "56ec",
+        "courriel": "user@example.com",
+        "segmentation": "25b",
+        "categorie": "P",
+        "raisonSociale1": "",
+        "raisonSociale2": "",
+        "langueCorrespondance": "FR",
+        "indPagePersonnelleActive": true,
+        "indFactureInternet": true,
+        "indPaiementInternet": false,
+        "indAucunCompteContrat": false,
+        "indDonneesConsommation": false,
+        "dateDerniereVisite": "2024-01-15",
+        "etatFacturePapier": "",
+        "listeComptesContrats": [
+          {
+            "titulaire": "5555551234",
+            "nomTitulaire": "427611da",
+            "prenomTitulaire": "56ec",
+            "raisonSocialeTitulaire1": "",
+            "raisonSocialeTitulaire2": "",
+            "nomGroupeTitulaire1": "",
+            "nomGroupeTitulaire2": "",
+            "categorieTitulaire": "P",
+            "adresse": "123 RUE EXAMPLE",
+            "modeEncaissement": "P",
+            "payeurDivergent": "",
+            "dateEmission": "2024-01-15",
+            "montantEchu": 4846.25,
+            "typeMVE": "",
+            "indContrats": true,
+            "indFinEventuelleCC": false,
+            "typeRelation": "",
+            "indDonneesErreur": false,
+            "factureIXOSID": "111111111111",
+            "documentArchivelinkID": "",
+            "dateFin": null,
+            "dateDebut": null,
+            "indicateurPA": true,
+            "compteBancaire": null,
+            "adresseFacturation": "123 RUE EXAMPLE",
+            "regroupement": "",
+            "listePaiements": [],
+            "noCompteContrat": "111111111111",
+            "dateEcheance": "2024-01-15",
+            "montant": 3589.84,
+            "solde": 3589.84,
+            "soldeEnSouffrance": 4846.25,
+            "dernierMontantPaye": 4846.25,
+            "contientPaiementsPostDates": false,
+            "coche": false,
+            "listeNoContrat": [
+              "1111111111"
+            ],
+            "dateProchaineFacture": "2024-01-15",
+            "typeDateProchaineFacture": "099",
+            "segmentation": "25b",
+            "sousConsommationMVE": false,
+            "surConsommationMVE": false,
+            "revisionAnnuelleMVE": false,
+            "infoEligibiliteConfirmationPaiement": null,
+            "noPartenaireMandataire": null,
+            "infoEligibiliteEntentePaiement": null,
+            "infoEligibiliteConfirmPaiementOuEntente": null,
+            "indProjection": false,
+            "typeEntenteSansProjection": "",
+            "gereDansEspaceClient": false,
+            "idBanque": "1111",
+            "institution": "96d",
+            "succursale": "91328",
+            "folio": "960de86",
+            "libelle": "09190d17821652b7",
+            "indBloquerPI": false
+          }
+        ]
+      },
+      "listeContratModel": [
+        {
+          "codeResponsabilite": null,
+          "noContrat": "1111111111",
+          "adresseConsommation": "123 RUE EXAMPLE",
+          "idLieuConsommation": "1111111111",
+          "noCompteContrat": "111111111111",
+          "noInstallation": "1111111111",
+          "noCompteur": "4DA8A9CA440",
+          "indicateurPortrait": true,
+          "indicateurDiagnostique": false,
+          "indicateurDiagnostiqueDR": false,
+          "documentArchivelinkID": "",
+          "codeDiagnostique": "",
+          "codeDiagnostiqueDR": "",
+          "indicateurAutoReleve": false,
+          "indicateurMVE": true,
+          "adhesionMVEEncours": false,
+          "retraitMVEEnCours": false,
+          "desinscritMVE": false,
+          "sousConsommationMVE": false,
+          "surConsommationMVE": false,
+          "mntEcart": 4846.25,
+          "revisionAnnuelleMVE": false,
+          "indicateurEligibiliteMVE": null,
+          "codePortrait": "2ac",
+          "codeAutoReleve": "",
+          "noCivique": "",
+          "rue": "",
+          "appartement": "",
+          "ville": "",
+          "codePostal": "",
+          "dateDebutContrat": "2024-01-15",
+          "dateFinContrat": null,
+          "contratAvecArriveePrevue": false,
+          "contratAvecArriveePrevueDansLePasse": true,
+          "contratAvecDepartPrevu": false,
+          "contratAvecDepartPrevuDansLePasse": false,
+          "departPrevuSansAvis": false,
+          "numeroTelephone": "d596654bdba",
+          "posteTelephone": "",
+          "indPuissance": false,
+          "codeAdhesionCPC": "N",
+          "codeEligibiliteCPC": null,
+          "codeEligibiliteCLT": null,
+          "tarifActuel": "DT",
+          "optionTarifActuel": null,
+          "codeEligibiliteDRCV": "",
+          "dateDebutEligibiliteDRCV": null,
+          "indEligibiliteDRCV": false,
+          "promoTarifaire": null,
+          "statutAbonnementMI": "",
+          "statutActivationMI": ""
+        }
+      ],
+      "listeInfoEligibiliteConfirmPaiementOuEntenteModel": []
+    },
+    "contract_info": {
+      "noContrat": "1111111111",
+      "adresseConsommation": "123 RUE EXAMPLE",
+      "idLieuConsommation": "1111111111",
+      "noCompteContrat": "111111111111",
+      "noInstallation": "1111111111",
+      "noCompteur": "4DA8A9CA440",
+      "indicateurPortrait": true,
+      "indicateurDiagnostique": false,
+      "indicateurDiagnostiqueDR": false,
+      "documentArchivelinkID": "",
+      "codeDiagnostique": "",
+      "codeDiagnostiqueDR": "",
+      "indicateurAutoReleve": false,
+      "indicateurMVE": false,
+      "adhesionMVEEncours": false,
+      "retraitMVEEnCours": false,
+      "desinscritMVE": false,
+      "sousConsommationMVE": false,
+      "surConsommationMVE": false,
+      "mntEcart": 4846.25,
+      "revisionAnnuelleMVE": false,
+      "codePortrait": "2ac",
+      "codeAutoReleve": "",
+      "noCivique": "",
+      "rue": "",
+      "appartement": "",
+      "ville": "",
+      "codePostal": "",
+      "dateDebutContrat": "2024-01-15T05:00:00.000+00:00",
+      "contratAvecArriveePrevue": false,
+      "contratAvecArriveePrevueDansLePasse": true,
+      "contratAvecDepartPrevu": false,
+      "contratAvecDepartPrevuDansLePasse": false,
+      "numeroTelephone": "d596654bdba",
+      "posteTelephone": "",
+      "indPuissance": false,
+      "codeAdhesionCPC": "N",
+      "tarifActuel": "DT",
+      "codeEligibiliteDRCV": "",
+      "indEligibiliteDRCV": false,
+      "statutAbonnementMI": "",
+      "statutActivationMI": ""
+    },
+    "periods_info": [
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": "2024-01-15",
+        "heureDerniereLecturePeriode": "f5ac135d",
+        "nbJourLecturePeriode": 39,
+        "nbJourPrevuPeriode": 56,
+        "consoTotalProjetePeriode": 10610,
+        "consoTotalPeriode": 172887,
+        "consoHautPeriode": 0,
+        "consoRegPeriode": 172887,
+        "moyenneKwhJourPeriode": 7936.79,
+        "montantFacturePeriode": 7627.41,
+        "moyenneDollarsJourPeriode": 3239.98,
+        "codeConsPeriode": "A",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 2,
+        "dateDebutPeriodeComparable": null,
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": 6519.41,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": false,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 606.91,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": null,
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 4846.25,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 773036,
+        "montantClimatisationPeriode": 0,
+        "kwhChauffagePeriode": 900548,
+        "kwhClimatisationPeriode": 0,
+        "montantVenteTranche1": 8691.29,
+        "listePrixTranche1": [
+          3610.43
+        ],
+        "montantVenteTranche2": 4846.25,
+        "listePrixTranche2": [],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 5328.4,
+        "listePrixFraisAccesReseau": [
+          2963.08
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "8f8",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "A",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 7627.41
+          },
+          {
+            "type": "aa293ac8",
+            "label": "fb4cf6e017c9f871",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 4846.25
+          },
+          {
+            "type": "80abd669",
+            "label": "68d3bb35864a1275",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 8691.29
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 5328.4
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 8073.07
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7",
+        "tooltipIdClimatisationComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7"
+      },
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": null,
+        "heureDerniereLecturePeriode": null,
+        "nbJourLecturePeriode": 0,
+        "nbJourPrevuPeriode": 62,
+        "consoTotalProjetePeriode": 0,
+        "consoTotalPeriode": 366851,
+        "consoHautPeriode": 0,
+        "consoRegPeriode": 366851,
+        "moyenneKwhJourPeriode": 2308.94,
+        "montantFacturePeriode": 1460.03,
+        "moyenneDollarsJourPeriode": 102.77,
+        "codeConsPeriode": "R",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 15,
+        "dateDebutPeriodeComparable": "2024-01-15",
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": null,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": false,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 3785.89,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": "2024-01-15",
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 9800.98,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 8,
+        "montantClimatisationPeriode": 23,
+        "kwhChauffagePeriode": 757956,
+        "kwhClimatisationPeriode": 785295,
+        "montantVenteTranche1": 4673.24,
+        "listePrixTranche1": [
+          3610.43
+        ],
+        "montantVenteTranche2": 4846.25,
+        "listePrixTranche2": [],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 7039.8,
+        "listePrixFraisAccesReseau": [
+          2963.08
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "8f8",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "E",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 1460.03
+          },
+          {
+            "type": "aa293ac8",
+            "label": "fb4cf6e017c9f871",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 4846.25
+          },
+          {
+            "type": "80abd669",
+            "label": "68d3bb35864a1275",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 4673.24
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 7039.8
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 8749.84
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisationComparaison": "7b3e44085f3ebc872d2e78"
+      },
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": null,
+        "heureDerniereLecturePeriode": null,
+        "nbJourLecturePeriode": 0,
+        "nbJourPrevuPeriode": 63,
+        "consoTotalProjetePeriode": 0,
+        "consoTotalPeriode": 517857,
+        "consoHautPeriode": 0,
+        "consoRegPeriode": 517857,
+        "moyenneKwhJourPeriode": 9186.37,
+        "montantFacturePeriode": 5032.48,
+        "moyenneDollarsJourPeriode": 4503.01,
+        "codeConsPeriode": "R",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 21,
+        "dateDebutPeriodeComparable": "2024-01-15",
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": null,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": false,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 1785.65,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": "2024-01-15",
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 5562.18,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 0,
+        "montantClimatisationPeriode": 560513,
+        "kwhChauffagePeriode": 0,
+        "kwhClimatisationPeriode": 642461,
+        "montantVenteTranche1": 457.38,
+        "listePrixTranche1": [
+          3610.43
+        ],
+        "montantVenteTranche2": 4846.25,
+        "listePrixTranche2": [],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 6324.8,
+        "listePrixFraisAccesReseau": [
+          2963.08
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "8f8",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "E",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 5032.48
+          },
+          {
+            "type": "aa293ac8",
+            "label": "fb4cf6e017c9f871",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 4846.25
+          },
+          {
+            "type": "80abd669",
+            "label": "68d3bb35864a1275",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 457.38
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 6324.8
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 9684.03
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisationComparaison": "7b3e44085f3ebc872d2e78"
+      },
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": null,
+        "heureDerniereLecturePeriode": null,
+        "nbJourLecturePeriode": 0,
+        "nbJourPrevuPeriode": 62,
+        "consoTotalProjetePeriode": 0,
+        "consoTotalPeriode": 918389,
+        "consoHautPeriode": 0,
+        "consoRegPeriode": 918389,
+        "moyenneKwhJourPeriode": 6856.87,
+        "montantFacturePeriode": 6047.53,
+        "moyenneDollarsJourPeriode": 1141.61,
+        "codeConsPeriode": "R",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 13,
+        "dateDebutPeriodeComparable": "2024-01-15",
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": null,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": false,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 9899.61,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": "2024-01-15",
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 2793.02,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 17,
+        "montantClimatisationPeriode": 25,
+        "kwhChauffagePeriode": 462052,
+        "kwhClimatisationPeriode": 917879,
+        "montantVenteTranche1": 7769.77,
+        "listePrixTranche1": [
+          3610.43
+        ],
+        "montantVenteTranche2": 4846.25,
+        "listePrixTranche2": [],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 7039.8,
+        "listePrixFraisAccesReseau": [
+          2963.08
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "8f8",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "P",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 6047.53
+          },
+          {
+            "type": "aa293ac8",
+            "label": "fb4cf6e017c9f871",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 4846.25
+          },
+          {
+            "type": "80abd669",
+            "label": "68d3bb35864a1275",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 7769.77
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 7039.8
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 8022.87
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisationComparaison": "7b3e44085f3ebc872d2e78"
+      },
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": null,
+        "heureDerniereLecturePeriode": null,
+        "nbJourLecturePeriode": 0,
+        "nbJourPrevuPeriode": 57,
+        "consoTotalProjetePeriode": 0,
+        "consoTotalPeriode": 585506,
+        "consoHautPeriode": 66,
+        "consoRegPeriode": 81717,
+        "moyenneKwhJourPeriode": 1771.35,
+        "montantFacturePeriode": 1251.72,
+        "moyenneDollarsJourPeriode": 4349.8,
+        "codeConsPeriode": "R",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 693169,
+        "dateDebutPeriodeComparable": "2024-01-15",
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": null,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": false,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 5316.22,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": "2024-01-15",
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 7745.79,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 969681,
+        "montantClimatisationPeriode": 0,
+        "kwhChauffagePeriode": 762497,
+        "kwhClimatisationPeriode": 0,
+        "montantVenteTranche1": 6670.85,
+        "listePrixTranche1": [
+          7980.32,
+          3610.43
+        ],
+        "montantVenteTranche2": 8408.46,
+        "listePrixTranche2": [
+          1062.99
+        ],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 1772.25,
+        "listePrixFraisAccesReseau": [
+          3972.62,
+          2963.08
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "833",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "H",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 1251.72
+          },
+          {
+            "type": "aa293ac8",
+            "label": "59b9397f33c904d3",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 8408.46
+          },
+          {
+            "type": "80abd669",
+            "label": "f729aabea944816c",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 6670.85
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 1772.25
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 2584.62
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisationComparaison": "7b3e44085f3ebc872d2e78"
+      },
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": null,
+        "heureDerniereLecturePeriode": null,
+        "nbJourLecturePeriode": 0,
+        "nbJourPrevuPeriode": 67,
+        "consoTotalProjetePeriode": 0,
+        "consoTotalPeriode": 737185,
+        "consoHautPeriode": 763369,
+        "consoRegPeriode": 313658,
+        "moyenneKwhJourPeriode": 9090.84,
+        "montantFacturePeriode": 390.77,
+        "moyenneDollarsJourPeriode": 5029.34,
+        "codeConsPeriode": "R",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 711787,
+        "dateDebutPeriodeComparable": "2024-01-15",
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": null,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": true,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 5389.31,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": "2024-01-15",
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 6378.43,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 140573,
+        "montantClimatisationPeriode": 0,
+        "kwhChauffagePeriode": 167784,
+        "kwhClimatisationPeriode": 0,
+        "montantVenteTranche1": 5339.87,
+        "listePrixTranche1": [
+          7980.32
+        ],
+        "montantVenteTranche2": 5566.71,
+        "listePrixTranche2": [
+          1062.99
+        ],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 296.45,
+        "listePrixFraisAccesReseau": [
+          3972.62
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "833",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "H",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 390.77
+          },
+          {
+            "type": "aa293ac8",
+            "label": "59b9397f33c904d3",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 5566.71
+          },
+          {
+            "type": "80abd669",
+            "label": "cae0289c1f72e960",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 5339.87
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 296.45
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 1884.74
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisationComparaison": "7b3e44085f3ebc872d2e78"
+      },
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": null,
+        "heureDerniereLecturePeriode": null,
+        "nbJourLecturePeriode": 0,
+        "nbJourPrevuPeriode": 56,
+        "consoTotalProjetePeriode": 0,
+        "consoTotalPeriode": 588871,
+        "consoHautPeriode": 0,
+        "consoRegPeriode": 588871,
+        "moyenneKwhJourPeriode": 9992.48,
+        "montantFacturePeriode": 3332.31,
+        "moyenneDollarsJourPeriode": 90.4,
+        "codeConsPeriode": "R",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 3,
+        "dateDebutPeriodeComparable": "2024-01-15",
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": null,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": false,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 8971.17,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": "2024-01-15",
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 8674.19,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 474081,
+        "montantClimatisationPeriode": 0,
+        "kwhChauffagePeriode": 756984,
+        "kwhClimatisationPeriode": 0,
+        "montantVenteTranche1": 7007.33,
+        "listePrixTranche1": [
+          7980.32
+        ],
+        "montantVenteTranche2": 4846.25,
+        "listePrixTranche2": [],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 6484.63,
+        "listePrixFraisAccesReseau": [
+          3972.62
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "833",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "A",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 3332.31
+          },
+          {
+            "type": "aa293ac8",
+            "label": "fb4cf6e017c9f871",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 4846.25
+          },
+          {
+            "type": "80abd669",
+            "label": "cae0289c1f72e960",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 7007.33
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 6484.63
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 626.75
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisationComparaison": "7b3e44085f3ebc872d2e78"
+      },
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": null,
+        "heureDerniereLecturePeriode": null,
+        "nbJourLecturePeriode": 0,
+        "nbJourPrevuPeriode": 60,
+        "consoTotalProjetePeriode": 0,
+        "consoTotalPeriode": 359623,
+        "consoHautPeriode": 0,
+        "consoRegPeriode": 359623,
+        "moyenneKwhJourPeriode": 2880.94,
+        "montantFacturePeriode": 8405.44,
+        "moyenneDollarsJourPeriode": 6647.62,
+        "codeConsPeriode": "R",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 15,
+        "dateDebutPeriodeComparable": null,
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": null,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": false,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 8050.54,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": null,
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 1312.87,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 12,
+        "montantClimatisationPeriode": 31,
+        "kwhChauffagePeriode": 359210,
+        "kwhClimatisationPeriode": 199856,
+        "montantVenteTranche1": 8247.56,
+        "listePrixTranche1": [
+          7980.32
+        ],
+        "montantVenteTranche2": 4846.25,
+        "listePrixTranche2": [],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 4106.19,
+        "listePrixFraisAccesReseau": [
+          3972.62
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "8f8",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "E",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 8405.44
+          },
+          {
+            "type": "aa293ac8",
+            "label": "fb4cf6e017c9f871",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 4846.25
+          },
+          {
+            "type": "80abd669",
+            "label": "cae0289c1f72e960",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 8247.56
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 4106.19
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 6011.84
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7",
+        "tooltipIdClimatisationComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7"
+      },
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": null,
+        "heureDerniereLecturePeriode": null,
+        "nbJourLecturePeriode": 0,
+        "nbJourPrevuPeriode": 63,
+        "consoTotalProjetePeriode": 0,
+        "consoTotalPeriode": 673200,
+        "consoHautPeriode": 0,
+        "consoRegPeriode": 673200,
+        "moyenneKwhJourPeriode": 2104.15,
+        "montantFacturePeriode": 57.06,
+        "moyenneDollarsJourPeriode": 5316.22,
+        "codeConsPeriode": "R",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 21,
+        "dateDebutPeriodeComparable": null,
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": null,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": false,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 443.25,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": null,
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 1341.15,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 0,
+        "montantClimatisationPeriode": 69990,
+        "kwhChauffagePeriode": 0,
+        "kwhClimatisationPeriode": 670213,
+        "montantVenteTranche1": 8368.79,
+        "listePrixTranche1": [
+          7980.32
+        ],
+        "montantVenteTranche2": 4846.25,
+        "listePrixTranche2": [],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 6436.09,
+        "listePrixFraisAccesReseau": [
+          3972.62
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "8f8",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "E",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 57.06
+          },
+          {
+            "type": "aa293ac8",
+            "label": "fb4cf6e017c9f871",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 4846.25
+          },
+          {
+            "type": "80abd669",
+            "label": "cae0289c1f72e960",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 8368.79
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 6436.09
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 9702.25
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7",
+        "tooltipIdClimatisationComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7"
+      },
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": null,
+        "heureDerniereLecturePeriode": null,
+        "nbJourLecturePeriode": 0,
+        "nbJourPrevuPeriode": 60,
+        "consoTotalProjetePeriode": 0,
+        "consoTotalPeriode": 623378,
+        "consoHautPeriode": 0,
+        "consoRegPeriode": 623378,
+        "moyenneKwhJourPeriode": 6428.63,
+        "montantFacturePeriode": 943.34,
+        "moyenneDollarsJourPeriode": 6762.26,
+        "codeConsPeriode": "R",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 15,
+        "dateDebutPeriodeComparable": null,
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": null,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": false,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 1250.13,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": null,
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 5358.28,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 15,
+        "montantClimatisationPeriode": 35,
+        "kwhChauffagePeriode": 814170,
+        "kwhClimatisationPeriode": 395860,
+        "montantVenteTranche1": 8501.97,
+        "listePrixTranche1": [
+          7980.32
+        ],
+        "montantVenteTranche2": 4846.25,
+        "listePrixTranche2": [],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 4106.19,
+        "listePrixFraisAccesReseau": [
+          3972.62
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "8f8",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "P",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 943.34
+          },
+          {
+            "type": "aa293ac8",
+            "label": "fb4cf6e017c9f871",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 4846.25
+          },
+          {
+            "type": "80abd669",
+            "label": "cae0289c1f72e960",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 8501.97
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 4106.19
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 4034.59
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7",
+        "tooltipIdClimatisationComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7"
+      },
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": null,
+        "heureDerniereLecturePeriode": null,
+        "nbJourLecturePeriode": 0,
+        "nbJourPrevuPeriode": 62,
+        "consoTotalProjetePeriode": 0,
+        "consoTotalPeriode": 324067,
+        "consoHautPeriode": 54,
+        "consoRegPeriode": 392335,
+        "moyenneKwhJourPeriode": 4671.88,
+        "montantFacturePeriode": 1757.51,
+        "moyenneDollarsJourPeriode": 8446.96,
+        "codeConsPeriode": "R",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 1,
+        "dateDebutPeriodeComparable": null,
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": null,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": false,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 443.25,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": null,
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 6613.43,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 643599,
+        "montantClimatisationPeriode": 0,
+        "kwhChauffagePeriode": 142515,
+        "kwhClimatisationPeriode": 0,
+        "montantVenteTranche1": 9537.81,
+        "listePrixTranche1": [
+          6240.43,
+          7980.32
+        ],
+        "montantVenteTranche2": 4564.13,
+        "listePrixTranche2": [
+          9298.04
+        ],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 7945.36,
+        "listePrixFraisAccesReseau": [
+          4954.94,
+          3972.62
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "833",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "H",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 1757.51
+          },
+          {
+            "type": "aa293ac8",
+            "label": "2caa244ff4f77169",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 4564.13
+          },
+          {
+            "type": "80abd669",
+            "label": "ee5c711de24f8f28",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 9537.81
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 7945.36
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 7739.31
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7",
+        "tooltipIdClimatisationComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7"
+      },
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": null,
+        "heureDerniereLecturePeriode": null,
+        "nbJourLecturePeriode": 0,
+        "nbJourPrevuPeriode": 63,
+        "consoTotalProjetePeriode": 0,
+        "consoTotalPeriode": 604026,
+        "consoHautPeriode": 80,
+        "consoRegPeriode": 149866,
+        "moyenneKwhJourPeriode": 4036.99,
+        "montantFacturePeriode": 5119.01,
+        "moyenneDollarsJourPeriode": 6223.65,
+        "codeConsPeriode": "R",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 569050,
+        "dateDebutPeriodeComparable": null,
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": null,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": true,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 6647.62,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": null,
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 5544.45,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 928768,
+        "montantClimatisationPeriode": 0,
+        "kwhChauffagePeriode": 805884,
+        "kwhClimatisationPeriode": 0,
+        "montantVenteTranche1": 7699.59,
+        "listePrixTranche1": [
+          6240.43
+        ],
+        "montantVenteTranche2": 2785.15,
+        "listePrixTranche2": [
+          9298.04
+        ],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 9259.69,
+        "listePrixFraisAccesReseau": [
+          4954.94
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "833",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "H",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 5119.01
+          },
+          {
+            "type": "aa293ac8",
+            "label": "2caa244ff4f77169",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 2785.15
+          },
+          {
+            "type": "80abd669",
+            "label": "9d6b7b473a012692",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 7699.59
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 9259.69
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 8629.84
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7",
+        "tooltipIdClimatisationComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7"
+      },
+      {
+        "numeroContrat": "1111111111",
+        "dateFinPeriode": "2024-01-15",
+        "dateDebutPeriode": "2024-01-15",
+        "dateDerniereLecturePeriode": null,
+        "heureDerniereLecturePeriode": null,
+        "nbJourLecturePeriode": 0,
+        "nbJourPrevuPeriode": 58,
+        "consoTotalProjetePeriode": 0,
+        "consoTotalPeriode": 361014,
+        "consoHautPeriode": 4,
+        "consoRegPeriode": 63980,
+        "moyenneKwhJourPeriode": 6190.33,
+        "montantFacturePeriode": 4395.27,
+        "moyenneDollarsJourPeriode": 3117.3,
+        "codeConsPeriode": "R",
+        "indMVEPeriode": true,
+        "tempMoyennePeriode": 2,
+        "dateDebutPeriodeComparable": null,
+        "indConsoAjusteePeriode": false,
+        "presenceCodeTarifDTPeriode": true,
+        "dernierTarif": "DT",
+        "presencePiscineExterieursPeriode": true,
+        "indPresenceCodeEvenementPeriode": false,
+        "montantProjetePeriode": null,
+        "multiplicateurFacturation": 590.5,
+        "indPeriodeHiverPourCalculPuissMinimale": false,
+        "puissanceMinAfacturer": null,
+        "dateDebPerPuisMinAFacturer": null,
+        "dateFinPerPuisMinAFacturer": null,
+        "puissanceApparenteKVA90": null,
+        "datePicPuisApparente": null,
+        "heurePicPuisApparente": null,
+        "puissanceReelleKW": null,
+        "datePicPuisReelle": null,
+        "heurePicPuisReelle": null,
+        "puissanceFactureeKW": null,
+        "facteurUtilisation": null,
+        "facteurDePuissance": null,
+        "coutCentkWh": 1611.74,
+        "codePuissUtiliseePourFacturation": null,
+        "montantVenteTotalProjete": null,
+        "dateDebutPeriodeComparableSelectionnee": null,
+        "codeQualiteDonneesEnergieHeure": "I",
+        "codeQualiteDonneesPuissanceHeure": "I",
+        "codeQualiteDonneesEnergieJour": "I",
+        "codeQualiteDonneesPuissanceJour": "I",
+        "nbKwhConsoHautTarifFlexPeriode": 0,
+        "nbHeurePointeCriritiqueCPCPeriode": 0,
+        "nbHeurePointeCriritiqueGDPPeriode": 0,
+        "affichageTarifFlexPeriode": false,
+        "indTempTarifBiEnergiePeriode": true,
+        "codeDerniereOptionTarifPeriode": "",
+        "montantGainPerteDTversusBase": 2285.28,
+        "isEligibleDRCV": true,
+        "montantChauffagePeriode": 442450,
+        "montantClimatisationPeriode": 0,
+        "kwhChauffagePeriode": 270735,
+        "kwhClimatisationPeriode": 0,
+        "montantVenteTranche1": 4660.28,
+        "listePrixTranche1": [
+          6240.43
+        ],
+        "montantVenteTranche2": 94.56,
+        "listePrixTranche2": [
+          9298.04
+        ],
+        "montantVentePointeCritique": 4846.25,
+        "listePrixPointeCritique": [],
+        "montantVenteFraisAccesReseau": 3008.87,
+        "listePrixFraisAccesReseau": [
+          4954.94
+        ],
+        "montantCreditCPC": 4846.25,
+        "listePrixCreditCPC": [],
+        "typeOffreMontantCredit": "833",
+        "labelLongTarif": "DT",
+        "labelCourtTarif": "DT",
+        "labelLongOptionTarif": "",
+        "labelCourtOptionTarif": "",
+        "zoneMessageHTMLPeriode": null,
+        "codeImageBackgroundPeriode": "A",
+        "zoneMsgHTMLHistPerEnergie": null,
+        "zoneMsgHTMLHistPerPuissance": null,
+        "zoneMsgHTMLHistPerCout": null,
+        "zoneMsgHTMLHistJourEnergie": null,
+        "zoneMsgHTMLHistHeureEnergie": null,
+        "zoneMessageHTMLHistoMensuel": null,
+        "urlComprendreTarif": "696dba28677dbdf8",
+        "listeDonneesConsoTypeCout": [
+          {
+            "type": "11239",
+            "label": "f29ade14e2395295",
+            "legendLabel": "f29ade14e2395295",
+            "montant": 4395.27
+          },
+          {
+            "type": "aa293ac8",
+            "label": "2caa244ff4f77169",
+            "legendLabel": "fb4cf6e017c9f871",
+            "montant": 94.56
+          },
+          {
+            "type": "80abd669",
+            "label": "9d6b7b473a012692",
+            "legendLabel": "a496b782cacbe328",
+            "montant": 4660.28
+          },
+          {
+            "type": "647d8",
+            "label": "e5b88d45ba89549a",
+            "legendLabel": "e5b88d45ba89549a",
+            "montant": 3008.87
+          },
+          {
+            "type": "c06dc",
+            "label": "73f89",
+            "legendLabel": "73f89",
+            "montant": 2546.15
+          }
+        ],
+        "texteValeurChauffage": null,
+        "texteValeurClimatisation": null,
+        "tooltipIdChauffage": "b43d7dc2e80c3cd13a4d62",
+        "tooltipIdClimatisation": "7b3e44085f3ebc872d2e78",
+        "tooltipIdChauffageComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7",
+        "tooltipIdClimatisationComparaison": "53f4d47ae2210a2b8fe45f6971972e1f87860dfcb7"
+      }
+    ],
+    "outages": {
+      "idLieuConso": "1111111111",
+      "etat": "A",
+      "date": "2024-01-15T16:23:06.000+00:00",
+      "repriseGraduellePossible": false,
+      "declencheurReprise": false,
+      "interruptions": []
+    },
+    "hourly_consumption": {
+      "success": true,
+      "results": {
+        "codeTarif": "DT",
+        "affichageTarifFlex": false,
+        "indTempTarifBiEnergieQuot": true,
+        "dateJour": "2024-01-15",
+        "echelleMinKwhHeureParJour": 0,
+        "echelleMaxKwhHeureParJour": 18,
+        "zoneMsgHTMLNonDispEnergie": null,
+        "zoneMsgHTMLNonDispPuissance": "dd2cdde5d17ee96214c2901efcaf6b8ef1879cf08a1dc806e7ab04067b7ca18a",
+        "indErreurJourneeEnergie": true,
+        "indErreurJourneePuissance": true,
+        "listeDonneesConsoEnergieHoraire": [
+          {
+            "heure": "1fcd6bed",
+            "consoReg": 5200.46,
+            "consoHaut": 4846.25,
+            "consoTotal": 5200.46,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "a7d7b218",
+            "consoReg": 2843.09,
+            "consoHaut": 4846.25,
+            "consoTotal": 2843.09,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "b7cac7e4",
+            "consoReg": 5328.82,
+            "consoHaut": 4846.25,
+            "consoTotal": 5328.82,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "e8c20c60",
+            "consoReg": 2853.37,
+            "consoHaut": 4846.25,
+            "consoTotal": 2853.37,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "8b947d23",
+            "consoReg": 3969.92,
+            "consoHaut": 4846.25,
+            "consoTotal": 3969.92,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "2a1d8d08",
+            "consoReg": 8801.33,
+            "consoHaut": 4846.25,
+            "consoTotal": 8801.33,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "c75936f0",
+            "consoReg": 4590.52,
+            "consoHaut": 4846.25,
+            "consoTotal": 4590.52,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "6fceef37",
+            "consoReg": 1495.72,
+            "consoHaut": 4846.25,
+            "consoTotal": 1495.72,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "57c12f9a",
+            "consoReg": 9647.28,
+            "consoHaut": 4846.25,
+            "consoTotal": 9647.28,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "ee804adc",
+            "consoReg": 6569.26,
+            "consoHaut": 4846.25,
+            "consoTotal": 6569.26,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "d8937416",
+            "consoReg": 7522.55,
+            "consoHaut": 4846.25,
+            "consoTotal": 7522.55,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "7defa2cc",
+            "consoReg": 3467.76,
+            "consoHaut": 4846.25,
+            "consoTotal": 3467.76,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "426cc656",
+            "consoReg": 6609.01,
+            "consoHaut": 4846.25,
+            "consoTotal": 6609.01,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "95bee964",
+            "consoReg": 7684.02,
+            "consoHaut": 4846.25,
+            "consoTotal": 7684.02,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "7e91e2c6",
+            "consoReg": 9280.1,
+            "consoHaut": 4846.25,
+            "consoTotal": 9280.1,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "b4ae1c3f",
+            "consoReg": 8324.87,
+            "consoHaut": 4846.25,
+            "consoTotal": 8324.87,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "17c5e9d6",
+            "consoReg": 4954.46,
+            "consoHaut": 4846.25,
+            "consoTotal": 4954.46,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "d83a982d",
+            "consoReg": 5665.89,
+            "consoHaut": 4846.25,
+            "consoTotal": 5665.89,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "b1775ad2",
+            "consoReg": 7303.02,
+            "consoHaut": 4846.25,
+            "consoTotal": 7303.02,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "d12736ea",
+            "consoReg": 2868.08,
+            "consoHaut": 4846.25,
+            "consoTotal": 2868.08,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "b04019ab",
+            "consoReg": 5518.15,
+            "consoHaut": 4846.25,
+            "consoTotal": 5518.15,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "63188351",
+            "consoReg": 6249.1,
+            "consoHaut": 4846.25,
+            "consoTotal": 6249.1,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "a7bb1dca",
+            "consoReg": 9643.55,
+            "consoHaut": 4846.25,
+            "consoTotal": 9643.55,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          },
+          {
+            "heure": "5f15fb88",
+            "consoReg": 5132.12,
+            "consoHaut": 4846.25,
+            "consoTotal": 5132.12,
+            "codeConso": "R",
+            "codeEvemenentEnergie": "",
+            "zoneMessageHTMLEnergie": null
+          }
+        ],
+        "listeDonneesConsoPuissanceHoraire": []
+      }
+    },
+    "daily_consumption": {
+      "success": true,
+      "results": [
+        {
+          "courant": {
+            "dateJourConso": "2024-01-15",
+            "zoneMessageHTMLQuot": null,
+            "consoRegQuot": 4679.3,
+            "consoHautQuot": 4846.25,
+            "consoTotalQuot": 4679.3,
+            "codeConsoQuot": "R",
+            "tempMoyenneQuot": 47913,
+            "codeTarifQuot": "DT",
+            "affichageTarifFlexQuot": false,
+            "indTempTarifBiEnergieQuot": true,
+            "codeEvenementQuot": ""
+          },
+          "compare": {
+            "dateJourConso": "2024-01-15",
+            "zoneMessageHTMLQuot": null,
+            "consoRegQuot": 7791.4,
+            "consoHautQuot": 4846.25,
+            "consoTotalQuot": 7791.4,
+            "codeConsoQuot": "R",
+            "tempMoyenneQuot": 693169,
+            "codeTarifQuot": "DT",
+            "affichageTarifFlexQuot": false,
+            "indTempTarifBiEnergieQuot": true,
+            "codeEvenementQuot": ""
+          }
+        }
+      ]
+    },
+    "monthly_consumption": {
+      "success": true,
+      "results": [
+        {
+          "courant": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 10,
+            "moyenneKwhJourMois": 6772.46,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 44217,
+            "consoHautMois": 0,
+            "consoTotalMois": 44217,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          },
+          "compare": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 10,
+            "moyenneKwhJourMois": 1663.33,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 913570,
+            "consoHautMois": 0,
+            "consoTotalMois": 913570,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          }
+        },
+        {
+          "courant": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 30,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 15,
+            "moyenneKwhJourMois": 1215.93,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 845639,
+            "consoHautMois": 0,
+            "consoTotalMois": 845639,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          },
+          "compare": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 30,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 16,
+            "moyenneKwhJourMois": 9975.38,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 970308,
+            "consoHautMois": 0,
+            "consoTotalMois": 970308,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          }
+        },
+        {
+          "courant": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 19,
+            "moyenneKwhJourMois": 577.35,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 146965,
+            "consoHautMois": 0,
+            "consoTotalMois": 146965,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          },
+          "compare": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 19,
+            "moyenneKwhJourMois": 8759.31,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 990062,
+            "consoHautMois": 0,
+            "consoTotalMois": 990062,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          }
+        },
+        {
+          "courant": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 21,
+            "moyenneKwhJourMois": 29.58,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 995539,
+            "consoHautMois": 0,
+            "consoTotalMois": 995539,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          },
+          "compare": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 21,
+            "moyenneKwhJourMois": 4617.23,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 557447,
+            "consoHautMois": 0,
+            "consoTotalMois": 557447,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          }
+        },
+        {
+          "courant": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 30,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 19,
+            "moyenneKwhJourMois": 8332.48,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 729227,
+            "consoHautMois": 0,
+            "consoTotalMois": 729227,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          },
+          "compare": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 30,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 19,
+            "moyenneKwhJourMois": 5694.95,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 749523,
+            "consoHautMois": 0,
+            "consoTotalMois": 749523,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          }
+        },
+        {
+          "courant": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 13,
+            "moyenneKwhJourMois": 229.24,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 216122,
+            "consoHautMois": 0,
+            "consoTotalMois": 216122,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          },
+          "compare": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 16,
+            "moyenneKwhJourMois": 1056.16,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 306435,
+            "consoHautMois": 0,
+            "consoTotalMois": 306435,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          }
+        },
+        {
+          "courant": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 30,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 6,
+            "moyenneKwhJourMois": 5017.6,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 766900,
+            "consoHautMois": 0,
+            "consoTotalMois": 766900,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          },
+          "compare": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 30,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 7,
+            "moyenneKwhJourMois": 957.81,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 601875,
+            "consoHautMois": 0,
+            "consoTotalMois": 601875,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          }
+        },
+        {
+          "courant": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 47913,
+            "moyenneKwhJourMois": 2684.23,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 378548,
+            "consoHautMois": 36,
+            "consoTotalMois": 182364,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          },
+          "compare": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 1,
+            "moyenneKwhJourMois": 8759.86,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 539560,
+            "consoHautMois": 8,
+            "consoTotalMois": 432718,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          }
+        },
+        {
+          "courant": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 28,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 711787,
+            "moyenneKwhJourMois": 9864.13,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 67308,
+            "consoHautMois": 212229,
+            "consoTotalMois": 751115,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          },
+          "compare": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 29,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 328996,
+            "moyenneKwhJourMois": 8085.53,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 686157,
+            "consoHautMois": 47,
+            "consoTotalMois": 980719,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          }
+        },
+        {
+          "courant": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 711787,
+            "moyenneKwhJourMois": 5477.91,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 213785,
+            "consoHautMois": 123712,
+            "consoTotalMois": 173149,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          },
+          "compare": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 161225,
+            "moyenneKwhJourMois": 5898.94,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 985130,
+            "consoHautMois": 80,
+            "consoTotalMois": 479957,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          }
+        },
+        {
+          "courant": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 161225,
+            "moyenneKwhJourMois": 3369.17,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 301738,
+            "consoHautMois": 70,
+            "consoTotalMois": 784229,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          },
+          "compare": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 31,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 47913,
+            "moyenneKwhJourMois": 54.29,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 695901,
+            "consoHautMois": 4,
+            "consoTotalMois": 62717,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          }
+        },
+        {
+          "courant": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 30,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 4,
+            "moyenneKwhJourMois": 2353.93,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 775043,
+            "consoHautMois": 0,
+            "consoTotalMois": 775043,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          },
+          "compare": {
+            "dateDebutMois": "2024-01-15",
+            "dateFinMois": "2024-01-15",
+            "codeConsoMois": "R",
+            "nbJourCalendrierMois": 30,
+            "presenceTarifDTmois": true,
+            "tempMoyenneMois": 0,
+            "moyenneKwhJourMois": 2361.82,
+            "nbHeureTarifGDPmois": 0,
+            "affichageTarifFlexMois": false,
+            "indTempTarifBiEnergieMois": true,
+            "consoRegMois": 193317,
+            "consoHautMois": 0,
+            "consoTotalMois": 193317,
+            "zoneMessageHTMLMois": null,
+            "indPresenceCodeEvenementMois": false
+          }
+        }
+      ]
+    },
+    "annual_consumption": {
+      "success": true,
+      "results": [
+        {
+          "courant": {
+            "dateDebutAnnee": "2024-01-15",
+            "dateFinAnnee": "2024-01-15",
+            "nbJourCalendrierAnnee": 778038,
+            "moyenneKwhJourAnnee": 1934.79,
+            "consoRegAnnee": 157299,
+            "consoHautAnnee": 5708,
+            "consoTotalAnnee": 551633,
+            "montantFactureAnnee": 8301.72,
+            "moyenneDollarsJourAnnee": 8268.59,
+            "isEligibleDRCV": true,
+            "codeTarifAnnee": "DT",
+            "montantGainPerteDTversusBaseAnnee": 5742.32,
+            "coutCentkWh": 7979.64,
+            "zoneMsgHTMLAnneeSuiviDT": "5e394cc8975a899bfa373f2cbd79e5605e05122d8524d711424767d5fa953f77",
+            "texteValeurChauffage": null,
+            "texteValeurClimatisation": null,
+            "tooltipIdChauffage": "d085efe62647fce66daaf82ef330",
+            "tooltipIdClimatisation": "75b2df1ebd8d98ae702e70373325",
+            "tooltipIdChauffageComparaison": "d085efe62647fce66daaf82ef330",
+            "tooltipIdClimatisationComparaison": "75b2df1ebd8d98ae702e70373325",
+            "montantChauffageAnnee": 864584,
+            "montantClimatisationAnnee": 737429,
+            "kwhChauffageAnnee": 15583,
+            "kwhClimatisationAnnee": 915408
+          },
+          "compare": {
+            "dateDebutAnnee": "2024-01-15",
+            "dateFinAnnee": "2024-01-15",
+            "nbJourCalendrierAnnee": 598092,
+            "moyenneKwhJourAnnee": 562.37,
+            "consoRegAnnee": 671653,
+            "consoHautAnnee": 832737,
+            "consoTotalAnnee": 204050,
+            "montantFactureAnnee": 3506.71,
+            "moyenneDollarsJourAnnee": 1293.4,
+            "isEligibleDRCV": true,
+            "codeTarifAnnee": "DT",
+            "montantGainPerteDTversusBaseAnnee": 6732.82,
+            "montantChauffageAnnee": 545220,
+            "montantClimatisationAnnee": 838605,
+            "kwhChauffageAnnee": 74948,
+            "kwhClimatisationAnnee": 113303,
+            "coutCentkWh": 7263.78
+          }
+        }
+      ]
+    }
+  }
+}
