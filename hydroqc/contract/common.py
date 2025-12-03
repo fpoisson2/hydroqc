@@ -382,9 +382,9 @@ class Contract(ABC):
 
     @property
     @check_period_data_present
-    def cp_projected_bill(self) -> float:
+    def cp_projected_bill(self) -> float | None:
         """Projected bill of the current period."""
-        return float(self._all_period_data[0].get("montantProjetePeriode", 0))
+        return self._all_period_data[0]["montantProjetePeriode"]
 
     @property
     @check_period_data_present
