@@ -16,7 +16,7 @@ repos:
   - id: check-ast
 
 - repo: https://github.com/psf/black
-  rev: 25.12.0
+  rev: 26.10.1
   hooks:
   - id: black
     language_version: python3
@@ -28,7 +28,7 @@ repos:
     additional_dependencies: [flake8-docstrings]
 
 - repo: https://github.com/PyCQA/isort
-  rev: 7.0.0
+  rev: 9.0.2
   hooks:
   - id: isort
     args: ["--profile", "black", "--filter-files"]
@@ -40,7 +40,7 @@ repos:
   - id: doc8
 
 - repo: https://github.com/pre-commit/mirrors-mypy
-  rev: v1.20.2
+  rev: v2.4.1
   hooks:
   - id: mypy
     args: [--strict, --pretty, --show-error-codes]
