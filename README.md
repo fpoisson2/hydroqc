@@ -5,9 +5,6 @@
 [![pipeline status](https://gitlab.com/hydroqc/hydroqc/badges/main/pipeline.svg)](https://gitlab.com/hydroqc/hydroqc/-/commits/main)
 
 
-
-**This is a library to use if you want to build your own solution. If you want a user-friendly implementation for your home automation system please use [hydroqc2mqtt](https://gitlab.com/hydroqc/hydroqc2mqtt) which provide a MQTT publisher, docker image and HASS addon.**
-
 This is a package to access some functionalities of Hydro Quebec API that are not documented.
 
 We started a discord server for the project where you can come to discuss and find help with the project on our [#development](https://discord.gg/NWnfdfRZ7T) channel
