@@ -1,0 +1,121 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Quality
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: test_requirements.txt
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y build-essential graphviz
+      - name: Install tox
+        run: python -m pip install tox
+      - name: Run quality checks
+        run: tox -e pylint,flake8,pydocstyle,typing,black --parallel auto
+      - name: Upload quality reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-reports
+          if-no-files-found: ignore
+          path: |
+            mypy-junit.xml
+            mypy-txt-report/
+            mypy-html-report/
+            classes.png
+            classes.mmd
+            classes.html
+            packages.png
+            packages.mmd
+            packages.html
+
+  home-assistant:
+    name: Home Assistant compatibility
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install version parser
+        run: python -m pip install packaging
+      - name: Select Home Assistant and Python versions
+        id: versions
+        run: python .github/scripts/home_assistant_versions.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ steps.versions.outputs.python }}
+      - name: Check dependency compatibility
+        env:
+          HOME_ASSISTANT_VERSION: ${{ steps.versions.outputs.home_assistant }}
+        run: |
+          python -m pip install "homeassistant==${HOME_ASSISTANT_VERSION}" .
+          python -m pip check
+
+  package:
+    name: Build package
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install build tools
+        run: python -m pip install build twine
+      - name: Build and verify distributions
+        run: |
+          python -m build
+          python -m twine check --strict dist/*
+      - name: Upload distributions
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: distributions
+          if-no-files-found: ignore
+          path: dist/
+
+  renovate:
+    name: Validate Renovate configuration
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check for configuration changes
+        id: changes
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          if git diff --name-only "$BASE_SHA" "$HEAD_SHA" -- renovate.json5 | grep -q .; then
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v4
+        if: steps.changes.outputs.changed == 'true'
+        with:
+          node-version: '24'
+      - name: Validate Renovate configuration
+        if: steps.changes.outputs.changed == 'true'
+        run: npx --yes --package renovate -- renovate-config-validator --strict renovate.json5

@@ -1,0 +1,179 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release version (for example, 1.2.3)
+        required: true
+        type: string
+      commit_sha:
+        description: Commit SHA on main (defaults to the latest commit or the existing tag)
+        required: false
+        type: string
+      publish_to_pypi:
+        description: Publish to PyPI
+        required: true
+        default: false
+        type: boolean
+
+permissions: {}
+
+concurrency:
+  group: release-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  tag:
+    name: Create or verify tag
+    runs-on: ubuntu-24.04
+    permissions:
+      actions: read
+      contents: write
+    outputs:
+      tag: ${{ steps.release.outputs.tag }}
+      sha: ${{ steps.release.outputs.sha }}
+    steps:
+      - name: Require the main workflow ref
+        env:
+          WORKFLOW_REF: ${{ github.ref }}
+        run: |
+          if [[ "$WORKFLOW_REF" != refs/heads/main ]]; then
+            echo 'Run this workflow from main.' >&2
+            exit 1
+          fi
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Verify the release and create the tag
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_VERSION: ${{ inputs.version }}
+          COMMIT_SHA: ${{ inputs.commit_sha }}
+        run: |
+          set -euo pipefail
+          if [[ ! "$RELEASE_VERSION" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]; then
+            echo 'Version must use the format 1.2.3.' >&2
+            exit 1
+          fi
+          if [[ -n "$COMMIT_SHA" && ! "$COMMIT_SHA" =~ ^[0-9a-fA-F]{7,40}$ ]]; then
+            echo 'Commit SHA must contain 7 to 40 hexadecimal characters.' >&2
+            exit 1
+          fi
+
+          tag="v${RELEASE_VERSION}"
+          if git show-ref --verify --quiet "refs/tags/$tag"; then
+            tag_sha=$(git rev-parse "refs/tags/$tag^{commit}")
+            target_sha=$tag_sha
+            if [[ -n "$COMMIT_SHA" ]]; then
+              target_sha=$(git rev-parse --verify "${COMMIT_SHA}^{commit}")
+              if [[ "$target_sha" != "$tag_sha" ]]; then
+                echo 'The existing tag points to a different commit.' >&2
+                exit 1
+              fi
+            fi
+            echo "Using existing tag $tag at $target_sha."
+          else
+            target_sha=$(git rev-parse --verify "${COMMIT_SHA:-refs/remotes/origin/main}^{commit}")
+          fi
+
+          if ! git merge-base --is-ancestor "$target_sha" refs/remotes/origin/main; then
+            echo 'The release commit must be in the history of main.' >&2
+            exit 1
+          fi
+
+          conclusion=$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/ci.yml/runs?branch=main&event=push&head_sha=${target_sha}&per_page=100" \
+            --jq '.workflow_runs[0].conclusion // "missing"')
+          if [[ "$conclusion" != success ]]; then
+            echo "The latest CI run for $target_sha on main must succeed (status: $conclusion)." >&2
+            exit 1
+          fi
+
+          if ! git show-ref --verify --quiet "refs/tags/$tag"; then
+            git tag "$tag" "$target_sha"
+            git push origin "refs/tags/$tag"
+          fi
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "sha=$target_sha" >> "$GITHUB_OUTPUT"
+
+  publish:
+    name: Publish to PyPI
+    if: inputs.publish_to_pypi
+    needs: tag
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.tag.outputs.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify tag and PyPI version
+        env:
+          RELEASE_TAG: ${{ needs.tag.outputs.tag }}
+          RELEASE_SHA: ${{ needs.tag.outputs.sha }}
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          if [[ "$(git rev-parse "refs/tags/${RELEASE_TAG}^{commit}")" != "$RELEASE_SHA" ]]; then
+            echo 'The release tag no longer points to the selected commit.' >&2
+            exit 1
+          fi
+          python - <<'PY'
+          import os
+          from urllib.error import HTTPError
+          from urllib.request import urlopen
+
+          version = os.environ["RELEASE_VERSION"]
+          url = f"https://pypi.org/pypi/Hydro-Quebec-API-Wrapper/{version}/json"
+          try:
+              with urlopen(url, timeout=30):
+                  raise SystemExit(f"Version {version} already exists on PyPI")
+          except HTTPError as error:
+              if error.code != 404:
+                  raise
+          PY
+      - name: Install build tools
+        run: python -m pip install build twine packaging
+      - name: Build and verify distributions
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          python -m build
+          python -m twine check --strict dist/*
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          from packaging.utils import parse_sdist_filename, parse_wheel_filename
+          from packaging.version import Version
+
+          expected = Version(os.environ["RELEASE_VERSION"])
+          distributions = list(Path("dist").iterdir())
+          if len(distributions) != 2:
+              raise SystemExit("Expected one wheel and one source distribution")
+          versions = []
+          formats = set()
+          for path in distributions:
+              if path.name.endswith(".whl"):
+                  formats.add("wheel")
+                  versions.append(parse_wheel_filename(path.name)[1])
+              elif path.name.endswith(".tar.gz"):
+                  formats.add("sdist")
+                  versions.append(parse_sdist_filename(path.name)[1])
+              else:
+                  raise SystemExit(f"Unexpected distribution: {path.name}")
+          if formats != {"wheel", "sdist"}:
+              raise SystemExit("Expected one wheel and one source distribution")
+          if any(version != expected for version in versions):
+              raise SystemExit(f"Distribution versions {versions} do not match {expected}")
+          PY
+      - name: Publish distributions
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+        run: python -m twine upload --non-interactive dist/*
